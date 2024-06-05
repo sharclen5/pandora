@@ -1,0 +1,5 @@
+#dropdownText1, #dropdownText2, #dropdownText3, #dropdownText4, #dropdownText5 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }

@@ -1,0 +1,12 @@
+#main{
+    background-image: linear-gradient(rgb(17 24 39), rgb(0, 23, 82));
+}
+
+#button{
+    background-color: #0EA5E9;
+    border-radius: 10px;
+}
+
+.box{
+    background-image: linear-gradient(rgb(39, 55, 89), rgb(1, 37, 126));
+}
