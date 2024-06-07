@@ -1,0 +1,13 @@
+/* custom.css */
+.fc .fc-button {
+    font-size: 0.75rem; /* adjust as needed */
+    padding: 0.25rem 0.5rem; /* adjust as needed */
+  }
+  
+  .fc .fc-daygrid-day-frame {
+    font-size: 0.75rem; /* adjust as needed */
+  }
+  
+  .fc .fc-col-header-cell-cushion {
+    font-size: 0.75rem; /* adjust as needed */
+  }

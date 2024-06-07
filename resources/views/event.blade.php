@@ -2,10 +2,10 @@
     <div id="main">
 
         <div id="community" class="grid grid-cols-12">
-    
+
             {{-- Sisi kiri --}}
             <div id="kiri" class="col-span-9 mt-12 px-5 pr-1">
-    
+
                 <div id="default-carousel" class="relative w-full" data-carousel="slide">
                     <div class="relative">
                         <!-- Carousel wrapper -->
@@ -43,9 +43,9 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div id="nav" class="mt-4 flex justify-between items-center">
-    
+
                     <div id="tombol">
                         <button type="button"
                             class="text-white hover:text-gray-300 border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Upcoming</button>
@@ -55,9 +55,9 @@
                             class="text-white hover:text-gray-300 border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">By
                             Category</button>
                     </div>
-    
+
                     <div id="search" class="w-2/5">
-    
+
                         <form class="max-w-md mx-auto">
                             <label for="default-search"
                                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -76,13 +76,13 @@
                                     class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                             </div>
                         </form>
-    
+
                     </div>
-    
+
                 </div>
-    
+
                 <div id="event" class="mt-4 flex flex-wrap justify-between">
-    
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
@@ -92,12 +92,13 @@
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
-    
+
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
@@ -107,11 +108,12 @@
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
@@ -121,12 +123,13 @@
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
-    
+
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
@@ -136,91 +139,104 @@
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
                             src="{{ asset('suisei2.jpg') }}" alt="">
                         <div class="flex flex-col justify-between p-4 leading-normal">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem
+                                ipsum
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
-    
+
+
                     <a href="#"
                         class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                         <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
                             src="{{ asset('suisei2.jpg') }}" alt="">
                         <div class="flex flex-col justify-between p-4 leading-normal">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem
+                                ipsum
                                 dolor
                                 sit amet consectetur.</h5>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                                consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis
+                                magni?
                             </p>
                         </div>
                     </a>
-    
+
                 </div>
-    
+
             </div>
-    
+
             {{-- Sisi kanan --}}
             <div id="kanan" class="col-span-3 mt-20 px-7 ml-8 pl-1">
-    
-                <h1 class="mb-2 mt-[-40px] text-3xl text-white mr-10">Your Event</h1>
-    
-    
+
+                <h1 class="mb-6 mt-[-40px] text-3xl text-white mr-10">Your Event</h1>
+
+                <div id='calendar' class="mb-6 bg-white rounded-lg h-[410px]"></div>
+
+
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                     <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
                         src="{{ asset('suisei2.jpg') }}" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum dolor
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum
+                            dolor
                             sit amet consectetur.</h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?</p>
+                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                        </p>
                     </div>
                 </a>
-    
-    
+
+
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                     <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
                         src="{{ asset('suisei2.jpg') }}" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum dolor
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum
+                            dolor
                             sit amet consectetur.</h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?</p>
+                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                        </p>
                     </div>
                 </a>
-    
+
                 <a href="#"
                     class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 mb-5">
                     <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
                         src="{{ asset('suisei2.jpg') }}" alt="">
                     <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum dolor
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Lorem ipsum
+                            dolor
                             sit amet consectetur.</h5>
                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum, dolor sit amet
-                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?</p>
+                            consectetur adipisicing elit. Velit consequuntur, ullam impedit repudiandae officiis magni?
+                        </p>
                     </div>
                 </a>
-    
-    
+
+
             </div>
         </div>
-    
+
     </div>
-    
+
 </x-layout>
