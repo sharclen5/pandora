@@ -22,19 +22,15 @@
             <input type="text" id="username" name="username" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium">Email</label>
-            <input type="text" id="email" name="email" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
-          </div>
-          <div>
             <label for="password" class="block text-sm font-medium">Password</label>
             <input type="password" id="password" name="password" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300">
           </div>
           <div id="button">
-            <button type="submit" class="w-full text-white p-2 rounded-md hover:bg-gray-800 -none  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Register</button>
+            <button type="submit" class="w-full text-white p-2 rounded-md hover:bg-gray-800 -none  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 transition-colors duration-300">Login</button>
           </div>
         </form>
         <div class="mt-4 text-sm text-center">
-          <p class="text-lg">Already have an account? <a href="{{ route('login') }}" class=" hover:underline text-blue-500">Login here</a>
+          <p class="text-lg">Didn't have an account yet ? <a href="{{ route('register') }}" class=" hover:underline text-blue-500">Sign up here</a>
           </p>
         </div>
       </div>
