@@ -2,7 +2,7 @@
 <div class="fixed top-0 z-50 flex flex-wrap place-items-center overflow-visible">
     <section class="relative mx-auto">
 
-        <!-- navbar_belum-log-in -->
+        {{-- <!-- navbar_belum-log-in -->
         <nav class="flex justify-between bg-gray-900 text-white w-screen">
             <div class="px-4 xl:px-12 py-2 flex w-full items-center">
                 <a class="text-2xl font-bold font-heading flex items-center" href="/">
@@ -17,9 +17,9 @@
                     onclick="window.location='{{ route('login') }}'">
                     Login/Register</button>
             </div>
-        </nav>
+        </nav> --}}
 
-        {{-- <!-- navbar_logged-in -->
+        <!-- navbar_logged-in -->
         <nav class="flex justify-between bg-gray-900 text-white w-screen">
             <div class="px-4 xl:px-12 py-2 flex w-full items-center">
                 <a class="text-2xl font-bold font-heading flex items-center" href="/">
@@ -236,7 +236,7 @@
             <div class="ml-2">
                 Name Here
             </div>
-        </nav> --}}
+        </nav>
 
     </section>
 </div>

@@ -35,7 +35,7 @@
 
         <div class="flex justify-center space-x-8 mt-24">
 
-            <div class="bg-transparent border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
+            <div class="bg-transparent hover:bg-blue-500 border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
                 <div class="flex flex-col items-center">
                     <svg class="w-16 h-16 text-white aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="bg-transparent border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
+            <div class="bg-transparent hover:bg-blue-500 border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
                 <div class="flex flex-col items-center">
                     <svg class="w-16 h-16 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <div class="bg-transparent border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
+            <div class="bg-transparent hover:bg-blue-500 border-4 border-white rounded-lg flex items-center justify-center h-44 w-72">
                 <div class="flex flex-col items-center">
                     <svg class="w-16 h-16 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
