@@ -17,14 +17,11 @@
     <x-navbar></x-navbar>
 
     <main class="mt-12">{{ $slot }}</main>
-
     
 
-  
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script> --}}
     <script src="{{ asset('js/welcome.js') }}"></script>   
-
 </body>
 
 

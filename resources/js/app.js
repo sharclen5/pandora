@@ -18,3 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   calendar.render();
 });
+
+document.querySelector('[data-modal-toggle="crud-modal"]').addEventListener('click', function() {
+  document.getElementById('crud-modal').classList.toggle('hidden');
+});
