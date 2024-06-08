@@ -17,18 +17,9 @@ module.exports = {
             sans: ['Figtree', ...defaultTheme.fontFamily.sans],
           },
         },
-<<<<<<< HEAD
-    },
-
-    plugins: [forms],
-
-    
-};
-=======
       },
     plugins: [
         require('@tailwindcss/forms'),
         require('flowbite/plugin')
     ],
   }
->>>>>>> 6b43904636c681f3811cbabded0cd39139bf2a0f

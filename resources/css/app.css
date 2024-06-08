@@ -2,10 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-=======
 @import 'flowbite';
 
 @import '~@fullcalendar/core/main.css';
 @import '~@fullcalendar/daygrid/main.css';
->>>>>>> 6b43904636c681f3811cbabded0cd39139bf2a0f
