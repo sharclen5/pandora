@@ -6,16 +6,18 @@
         "build": "vite build"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.5.2",
         "@vitejs/plugin-vue": "^5.0.4",
         "autoprefixer": "^10.4.19",
         "axios": "^1.6.4",
         "flowbite": "^2.3.0",
-        "laravel-echo": "^1.16.1",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.38",
+<<<<<<< HEAD
         "pusher-js": "^8.4.0-rc2",
         "tailwindcss": "^3.4.4",
+=======
+        "tailwindcss": "^3.4.3",
+>>>>>>> 6b43904636c681f3811cbabded0cd39139bf2a0f
         "ts-loader": "^9.5.1",
         "typescript": "^5.4.5",
         "vite": "^5.0",
@@ -25,7 +27,10 @@
     "dependencies": {
         "@fullcalendar/core": "^6.1.14",
         "@fullcalendar/daygrid": "^6.1.14",
+        "@tailwindcss/forms": "^0.5.7",
         "flowbite-datepicker": "^1.2.6",
+        "laravel-echo": "^1.16.1",
+        "pusher-js": "^8.4.0-rc2",
         "vue": "^3.4.27",
         "vue-loader": "^17.4.2"
     }
