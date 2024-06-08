@@ -20,7 +20,7 @@
                 </div>
             </nav>
         @endguest
-        
+
 
         <!-- navbar_logged-in -->
         @auth
@@ -68,20 +68,18 @@
                         <div id="dropdownNotification"
                             class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow"
                             aria-labelledby="dropdownNotificationButton">
-                            <div
-                                class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50">
+                            <div class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50">
                                 Notifications
                             </div>
                             <div class="divide-y divide-gray-100">
                                 <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
-                                        <img class="rounded-full w-11 h-11"
-                                            src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
+                                        <img class="rounded-full w-11 h-11" src="/docs/images/people/profile-picture-1.jpg"
+                                            alt="Jese image">
                                         <div
                                             class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-blue-600 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 18 18">
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
                                                 <path
                                                     d="M1 18h16a1 1 0 0 0 1-1v-6h-4.439a.99.99 0 0 0-.908.6 3.978 3.978 0 0 1-7.306 0 .99.99 0 0 0-.908-.6H0v6a1 1 0 0 0 1 1Z" />
                                                 <path
@@ -98,13 +96,12 @@
                                 </a>
                                 <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
-                                        <img class="rounded-full w-11 h-11"
-                                            src="/docs/images/people/profile-picture-2.jpg" alt="Joseph image">
+                                        <img class="rounded-full w-11 h-11" src="/docs/images/people/profile-picture-2.jpg"
+                                            alt="Joseph image">
                                         <div
                                             class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-gray-900 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 20 18">
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                                                 <path
                                                     d="M6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Zm11-3h-2V5a1 1 0 0 0-2 0v2h-2a1 1 0 1 0 0 2h2v2a1 1 0 0 0 2 0V9h2a1 1 0 1 0 0-2Z" />
                                             </svg>
@@ -122,13 +119,12 @@
                                 </a>
                                 <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
-                                        <img class="rounded-full w-11 h-11"
-                                            src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image">
+                                        <img class="rounded-full w-11 h-11" src="/docs/images/people/profile-picture-3.jpg"
+                                            alt="Bonnie image">
                                         <div
                                             class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-red-600 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                                                viewBox="0 0 20 18">
+                                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
                                                 <path
                                                     d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
                                             </svg>
@@ -206,23 +202,39 @@
 
                         <!-- USER PROFILE -->
 
-                        
-                        <a class="flex items-center hover:text-gray-200" href="{{ route('profile') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </a>
+
+
+                        <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
+                            data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
+                            src="{{ asset('minisui.png') }}" alt="User dropdown">
+
+                        <!-- Dropdown menu -->
+                        <div id="userDropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                                <div>Hoshimachi Suisei</div>
+                            </div>
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="#"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log
+                                    out</a>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
 
                 <!-- Responsive navbar -->
                 <a class="xl:hidden flex mr-6 items-center" href="#">
-                    <svg class="w-6 h-6 text-gray-800" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                        viewBox="0 0 24 24">
+                    <svg class="w-6 h-6 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z" />
                     </svg>
