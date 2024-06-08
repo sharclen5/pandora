@@ -14,7 +14,7 @@
                 <!-- Login/Register button -->
                 <div class="ml-2">
                     <button type="button"
-                        class="mt-2 mr-8 text-white hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+                        class="mt-2 mr-8 text-white hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                         onclick="window.location='{{ route('login') }}'">
                         Login/Register</button>
                 </div>
@@ -51,7 +51,7 @@
 
 
                         <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification"
-                            class="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none dark:hover:text-white dark:text-gray-400"
+                            class="relative inline-flex items-center text-sm font-medium text-center text-gray-500 hover:text-gray-900 focus:outline-none"
                             type="button">
                             <svg class="text-white w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 14 20">
@@ -60,25 +60,25 @@
                             </svg>
 
                             <div
-                                class="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 dark:border-gray-900 animate-pulse">
+                                class="absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full -top-0.5 start-2.5 animate-pulse">
                             </div>
                         </button>
 
                         <!-- Dropdown menu -->
                         <div id="dropdownNotification"
-                            class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
+                            class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow"
                             aria-labelledby="dropdownNotificationButton">
                             <div
-                                class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
+                                class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50">
                                 Notifications
                             </div>
-                            <div class="divide-y divide-gray-100 dark:divide-gray-700">
-                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="divide-y divide-gray-100">
+                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
                                         <img class="rounded-full w-11 h-11"
                                             src="/docs/images/people/profile-picture-1.jpg" alt="Jese image">
                                         <div
-                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-blue-600 border border-white rounded-full dark:border-gray-800">
+                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-blue-600 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 18 18">
@@ -90,18 +90,18 @@
                                         </div>
                                     </div>
                                     <div class="w-full ps-3">
-                                        <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">New message from <span
-                                                class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>: "Hey,
+                                        <div class="text-gray-500 text-sm mb-1.5">New message from <span
+                                                class="font-semibold text-gray-900">Jese Leos</span>: "Hey,
                                             what's up? All set for the presentation?"</div>
-                                        <div class="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
+                                        <div class="text-xs text-blue-600">a few moments ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
                                         <img class="rounded-full w-11 h-11"
                                             src="/docs/images/people/profile-picture-2.jpg" alt="Joseph image">
                                         <div
-                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-gray-900 border border-white rounded-full dark:border-gray-800">
+                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-gray-900 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 20 18">
@@ -111,21 +111,21 @@
                                         </div>
                                     </div>
                                     <div class="w-full ps-3">
-                                        <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
-                                                class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span>
+                                        <div class="text-gray-500 text-sm mb-1.5"><span
+                                                class="font-semibold text-gray-900">Joseph Mcfall</span>
                                             and
-                                            <span class="font-medium text-gray-900 dark:text-white">5 others</span> started
+                                            <span class="font-medium text-gray-900">5 others</span> started
                                             following you.
                                         </div>
-                                        <div class="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
+                                        <div class="text-xs text-blue-600">10 minutes ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
                                         <img class="rounded-full w-11 h-11"
                                             src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image">
                                         <div
-                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-red-600 border border-white rounded-full dark:border-gray-800">
+                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-red-600 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 20 18">
@@ -135,20 +135,20 @@
                                         </div>
                                     </div>
                                     <div class="w-full ps-3">
-                                        <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
-                                                class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span> and
-                                            <span class="font-medium text-gray-900 dark:text-white">141 others</span> love
+                                        <div class="text-gray-500 text-sm mb-1.5"><span
+                                                class="font-semibold text-gray-900">Bonnie Green</span> and
+                                            <span class="font-medium text-gray-900">141 others</span> love
                                             your story. See it and view more stories.
                                         </div>
-                                        <div class="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
+                                        <div class="text-xs text-blue-600">44 minutes ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
                                         <img class="rounded-full w-11 h-11"
                                             src="/docs/images/people/profile-picture-4.jpg" alt="Leslie image">
                                         <div
-                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-green-400 border border-white rounded-full dark:border-gray-800">
+                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-green-400 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 20 18">
@@ -158,20 +158,20 @@
                                         </div>
                                     </div>
                                     <div class="w-full ps-3">
-                                        <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
-                                                class="font-semibold text-gray-900 dark:text-white">Leslie
+                                        <div class="text-gray-500 text-sm mb-1.5"><span
+                                                class="font-semibold text-gray-900">Leslie
                                                 Livingston</span>
                                             mentioned you in a comment: <span class="font-medium text-blue-500"
                                                 href="#">@bonnie.green</span> what do you say?</div>
-                                        <div class="text-xs text-blue-600 dark:text-blue-500">1 hour ago</div>
+                                        <div class="text-xs text-blue-600">1 hour ago</div>
                                     </div>
                                 </a>
-                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <a href="#" class="flex px-4 py-3 hover:bg-gray-100">
                                     <div class="flex-shrink-0">
                                         <img class="rounded-full w-11 h-11"
                                             src="/docs/images/people/profile-picture-5.jpg" alt="Robert image">
                                         <div
-                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-purple-500 border border-white rounded-full dark:border-gray-800">
+                                            class="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-purple-500 border border-white rounded-full">
                                             <svg class="w-2 h-2 text-white" aria-hidden="true"
                                                 xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                                 viewBox="0 0 20 14">
@@ -181,18 +181,18 @@
                                         </div>
                                     </div>
                                     <div class="w-full ps-3">
-                                        <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
-                                                class="font-semibold text-gray-900 dark:text-white">Robert Brown</span>
+                                        <div class="text-gray-500 text-sm mb-1.5"><span
+                                                class="font-semibold text-gray-900">Robert Brown</span>
                                             posted a new video: Glassmorphism - learn how to implement the new design trend.
                                         </div>
-                                        <div class="text-xs text-blue-600 dark:text-blue-500">3 hours ago</div>
+                                        <div class="text-xs text-blue-600">3 hours ago</div>
                                     </div>
                                 </a>
                             </div>
                             <a href="#"
-                                class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+                                class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100">
                                 <div class="inline-flex items-center ">
-                                    <svg class="w-4 h-4 me-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    <svg class="w-4 h-4 me-2 text-gray-500" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                                         <path
                                             d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
@@ -204,7 +204,9 @@
 
 
 
-                        <!-- Sign In / Register      -->
+                        <!-- USER PROFILE -->
+
+                        
                         <a class="flex items-center hover:text-gray-200" href="{{ route('profile') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -218,7 +220,7 @@
 
                 <!-- Responsive navbar -->
                 <a class="xl:hidden flex mr-6 items-center" href="#">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                    <svg class="w-6 h-6 text-gray-800" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                         viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
