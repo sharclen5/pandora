@@ -1,6 +1,8 @@
 <?php
 
+use App\Livewire\CommunityCreate;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommunityController;
 
 Route::get('/', function () {
     return view('welcome', ['title' => 'Pandora']);
@@ -33,5 +35,7 @@ Route::view('profile', 'profile')
     Route::get('/profile', function () {
         return view('profile', ['title' => 'Profile']);
     })->name('profile');
+
+    Route::get('/community/create', CommunityCreate::class);
 
 require __DIR__.'/auth.php';
