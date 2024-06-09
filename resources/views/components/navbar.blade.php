@@ -212,13 +212,13 @@
                         <div id="userDropdown"
                             class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                                <div>Hoshimachi Suisei</div>
+                                <div>{{ Auth::user()->name }}</div>
                             </div>
                             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="avatarButton">
+                                <li>
                                     <a href="{{ route('profile') }}"
-                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                                        Profile
-                                    </a>
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                </li>
                             </ul>
                             <div class="py-1">
                                 @livewire('logout-component')
@@ -249,9 +249,6 @@
                             d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </a>
-                <div class="ml-2">
-                    Name Here
-                </div>
             </nav>
         @endauth
 
