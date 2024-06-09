@@ -31,7 +31,7 @@
         </aside>
 
 
-        <div id="profile" 
+        <div id="profile" style="display: none"
             class="highlight-box border-2 bg-blue-500 border-blue-500 rounded-md mt-8 mb-12 px-10 py-6 max-w-3xl w-full mx-auto box">
 
             <div class="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
@@ -71,7 +71,7 @@
 
         </div>
 
-        <div id="community" style="display: none" class="flex justify-center items-center w-full h-full mt-8">
+        <div id="community" class="flex justify-center items-center w-full h-full mt-8">
 
             <!-- Start block -->
             <section>
@@ -468,6 +468,7 @@
                 </div>
             </section>
             <!-- End block -->
+
             <!-- Update modal -->
             <div id="updateCommunityModal" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -550,6 +551,7 @@
                     </div>
                 </div>
             </div>
+            
             <!-- Read modal -->
             <div id="static-modal" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -1408,5 +1410,10 @@
 
 
         </div>
+
+
+
+        
+
 
 </x-layout>

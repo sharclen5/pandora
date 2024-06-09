@@ -40,20 +40,18 @@ new #[Layout('layouts.guest')] class extends Component {
 
                 <form wire:submit="login" class="space-y-8">
                     <!-- Email Address -->
-                    <div>
+                    <div class="mt-4">
                         <x-input-label class="text-white" for="email" :value="__('Email')" />
-                        <x-text-input wire:model="form.email" id="email" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:bg-white focus:text-black focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300" type="email"
-                            name="email" required autofocus autocomplete="username" />
+                        <x-text-input wire:model="form.email" id="email" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:bg-white focus:text-black focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
+                            type="email" name="email" required autocomplete="current-email" />
                         <x-input-error :messages="$errors->get('form.email')" class="mt-2" />
                     </div>
 
                     <!-- Password -->
                     <div class="mt-4">
                         <x-input-label class="text-white" for="password" :value="__('Password')" />
-
                         <x-text-input wire:model="form.password" id="password" class="mt-1 p-2 w-full border-blue-800 rounded-md bg-blue-900 focus:bg-white focus:text-black focus:border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 transition-colors duration-300"
                             type="password" name="password" required autocomplete="current-password" />
-
                         <x-input-error :messages="$errors->get('form.password')" class="mt-2" />
                     </div>
 
