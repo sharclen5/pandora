@@ -43,6 +43,6 @@ Route::view('profile', 'profile')
 
     Route::get('/community/create', CommunityCreate::class);
 
-    Route::get('/community/{community}', CommunityProfile::class);
+    // Route::get('/community/{community}', CommunityProfile::class);
 
 require __DIR__.'/auth.php';
