@@ -15,7 +15,6 @@
             </p>
         </div>
     </div>
-    @endforeach
-
     @include('livewire.community-profile', ['id' => $commun->id])
+    @endforeach
 </div>
