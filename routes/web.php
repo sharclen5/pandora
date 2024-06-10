@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\CommunityCreate;
+use App\Livewire\CommunityProfile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommunityController;
 
@@ -27,6 +28,10 @@ Route::view('profile', 'profile')
     Route::get('/community', function () {
         return view('community');
     })->name('community');
+
+    Route::get('/communityprofile', function () {
+        return view('communityprofile');
+    })->name('communityprofile');
     
     Route::get('/event', function () {
         return view('event', ['title' => 'Event']);
@@ -37,5 +42,7 @@ Route::view('profile', 'profile')
     })->name('profile');
 
     Route::get('/community/create', CommunityCreate::class);
+
+    Route::get('/community/{community}', CommunityProfile::class);
 
 require __DIR__.'/auth.php';

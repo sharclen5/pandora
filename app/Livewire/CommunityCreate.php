@@ -47,7 +47,7 @@ class CommunityCreate extends Component
              'members_id' => Auth::id(),
         ]);
         
-        // session()->flash('message', 'Community created successfully.');
+        session()->flash('message', 'Community created successfully.');
 
         return redirect()->to('/community');
     }
