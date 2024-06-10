@@ -44,7 +44,7 @@ class CommunityCreate extends Component
              'category' => $this->category,
              'description' => $this->description,
              'guide' => $this->guide,
-             'members_id' => rand(),
+             'members_id' => Auth::id(),
         ]);
         
         session()->flash('message', 'Community created successfully.');
