@@ -35,7 +35,7 @@
                         <div class="flex space-x-4">
                             <a href="{{ route('home') }}"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Home</a>
-                            <a href="{{ route('chat') }}"
+                            <a href="{{ route('chatshow') }}"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Chat</a>
                             <a href="{{ route('community') }}"
                                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-lg font-medium">Community</a>
@@ -206,7 +206,13 @@
 
                         <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
                             data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
-                            src="{{ asset('minisui.png') }}" alt="User dropdown">
+                            src="
+                                @if (auth()->user()->img == 'default.jpg')
+                                https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+                              @else
+                                {{ asset('storage/' . auth()->user()->img) }}
+                              @endif
+                            " alt="User dropdown">
 
                         <!-- Dropdown menu -->
                         <div id="userDropdown"
