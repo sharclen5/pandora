@@ -1,9 +1,9 @@
 <x-layout>
 
-    <div id="welcome" class="mt-36 flex inset-x-0 flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div id="welcome" class="flex inset-x-0 flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
 
         <h1
-            class="mt-24 mb-4 text-4xl sm:text-5xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-l from-white to-gray-500 dark:from-gray-700 dark:to-gray-400">
+            class="mt-48 mb-4 text-4xl sm:text-5xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-l from-white to-gray-500 dark:from-gray-700 dark:to-gray-400">
             Discover Your Community</h1>
         <h1
             class="mb-8 text-4xl sm:text-5xl md:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-l from-white to-gray-500 dark:from-gray-700 dark:to-gray-400">

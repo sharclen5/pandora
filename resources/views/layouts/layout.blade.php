@@ -17,7 +17,9 @@
 
     <x-navbar></x-navbar>
 
+    <div id="main">
     <main class="mt-12">{{ $slot }}</main>
+    </div>
     
     @livewireScripts
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>

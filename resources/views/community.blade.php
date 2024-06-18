@@ -1,6 +1,5 @@
 <x-layout>
-    <div id="main" class="antialiased">
-
+    
         <div id="crud-modal" tabindex="-1" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-xl max-h-full">
@@ -12,7 +11,7 @@
                             Create New Community
                         </h3>
                         <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                            class="text-gray-800 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                             data-modal-toggle="crud-modal">
                             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14">
@@ -34,11 +33,11 @@
             class="fixed left-0 z-40 w-60 h-full pt-10 transition-transform -translate-x-full bg-blue-300 md:translate-x-0"
             aria-label="Sidenav" id="drawer-navigation">
             <div class="overflow-y-auto px-3 h-full">
-                <h1 class="font-bold text-2xl mb-8 text-center">Discover Your Community</h1>
+                <h1 class="font-bold text-2xl mb-8 text-center text-gray-800">Discover Your Community</h1>
 
                 <a href="#"
                     class="mb-4 flex items-center p-2 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-100 group">
-                    <svg class="w-6 h-6 text-gray-500" viewBox="0 0 30 30" id="_16_-_Compas" data-name="16 - Compas"
+                    <svg class="w-6 h-6 text-gray-800" viewBox="0 0 30 30" id="_16_-_Compas" data-name="16 - Compas"
                         xmlns="http://www.w3.org/2000/svg">
                         <path id="Path_190" data-name="Path 190"
                             d="M16,1A15,15,0,1,0,31,16,15.007,15.007,0,0,0,16,1Zm0,2A13,13,0,1,1,3,16,13.006,13.006,0,0,1,16,3Z"
@@ -191,7 +190,7 @@
 
             @livewire('community-list')
         </main>
-    </div>
+    
 
 
 </x-layout>

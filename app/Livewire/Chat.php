@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User;
 
 class Chat extends Component
 {   
+    public $isPollingActive = true;
     public User $user;
     public $message = '';
 
@@ -23,6 +24,7 @@ class Chat extends Component
             ->orWhere('to_user_id', $this->user->id)
             ->get(),
             'to_user' => $this->user,
+            'isPollingActive' => $this->isPollingActive
         ]);
     }
 
