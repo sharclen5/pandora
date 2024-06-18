@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Auth;
 use Livewire\Component;
+use App\Models\Category;
 use App\Models\Community;
 use Livewire\WithFileUploads;
 
@@ -19,15 +20,21 @@ class CommunityCreate extends Component
     public $description;
     public $guide;
     public $members_id;
+    public $categoryList = [];
 
     protected $rules = [
         'name' => 'required|string|max:255',
         'img' => 'required|image|max:1024',
         'tagline' => 'required|string|max:255',
         'category' => 'required|string|max:255',
-        'description' => 'required|string',
-        'guide' => 'required|string',
+        'description' => 'required|string|max:1000',
+        'guide' => 'required|string|max:1000',
     ];
+
+    public function mount()
+    {
+        $this->categoryList = Category::all();
+    }
 
     public function submit()
     {
@@ -44,9 +51,10 @@ class CommunityCreate extends Component
              'category' => $this->category,
              'description' => $this->description,
              'guide' => $this->guide,
-             'members_id' => rand(),
+             'members_id' => Auth::id(),
         ]);
         
+        unlink($this->img->getRealPath());
         session()->flash('message', 'Community created successfully.');
 
         return redirect()->to('/community');

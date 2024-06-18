@@ -33,10 +33,9 @@
             </label>
             <select id="category" wire:model="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
                 <option selected="">Select category</option>
-                <option value="TV">TV/Monitors</option>
-                <option value="PC">PC</option>
-                <option value="GA">Gaming/Console</option>
-                <option value="PH">Phones</option>
+                @foreach ($categoryList as $category)
+                    <option value="{{ $category->name }}">{{ $category->name }}</option>    
+                @endforeach
             </select>
             @error('category') <span class="error text-red-500">{{ $message }}</span> @enderror
         </div>

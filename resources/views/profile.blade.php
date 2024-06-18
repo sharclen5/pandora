@@ -41,18 +41,30 @@
                     <div class="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
 
                         <img class="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-indigo-500"
-                            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+                            src="
+                              @if (auth()->user()->img == 'default.jpg')
+                                https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
+                              @else
+                                {{ asset('storage/' . auth()->user()->img) }}
+                              @endif
+                            "
                             alt="Bordered avatar">
 
                         <div class="flex flex-col space-y-5 sm:ml-8">
-                            <button type="button"
-                                class="py-3.5 px-7 text-base font-medium text-indigo-100 focus:outline-none bg-[#202142] rounded-lg border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200 ">
-                                Change picture
-                            </button>
-                            <button type="button"
-                                class="py-3.5 px-7 text-base font-medium text-black focus:outline-none bg-white rounded-lg border border-indigo-200 hover:bg-indigo-100 hover:text-[#202142] focus:z-10 focus:ring-4 focus:ring-indigo-200 ">
-                                Delete picture
-                            </button>
+                          <!-- You can open the modal using ID.showModal() method -->
+                        <button class="py-3.5 px-7 text-base font-medium text-indigo-100 focus:outline-none bg-[#202142] rounded-lg border border-indigo-200 hover:bg-indigo-900 focus:z-10 focus:ring-4 focus:ring-indigo-200 " onclick="my_modal_3.showModal()">
+                          Change Pictures
+                        </button>
+                          <dialog id="my_modal_3" class="modal">
+                            <div class="modal-box">
+                              <form method="dialog">
+                                <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black ">✕</button>
+                              </form>
+                            <h3 class="font-bold text-black">Add your image!!!</h3>
+                            @livewire('add-img')
+                          </div>
+                        </dialog>  
+                            @livewire('delete-img')
                         </div>
                     </div>
 

@@ -190,9 +190,6 @@
             </div>
 
             @livewire('community-list')
-
-
-            
         </main>
     </div>
 
