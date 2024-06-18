@@ -22,6 +22,7 @@ class Chat extends Component
             ->orWhere('to_user_id', auth()->id())
             ->orWhere('to_user_id', $this->user->id)
             ->get(),
+            'to_user' => $this->user,
         ]);
     }
 
