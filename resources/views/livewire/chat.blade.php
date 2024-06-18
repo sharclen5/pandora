@@ -21,7 +21,7 @@
                         class="flex flex-row py-4 px-2 justify-center items-center border-b-2 border-gray-800 hover:bg-gray-100">
                         <div class="w-1/5">
                             <img class="object-cover h-12 w-12 rounded-full"
-                                src="{{ $user->img == 'default.jpg' ? 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' : asset('storage/' . $user->img) }}"
+                                src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
                                 alt="">
                         </div>
                         <div class="w-full">
@@ -49,9 +49,9 @@
                             <div class="chat-image avatar">
                                 <div class="w-10 rounded-full">
                                     <img alt="Tailwind CSS chat bubble component"
-                                        src="@if ($message->from_user_id == auth()->id()) @if (auth()->user()->img == 'default.jpg') https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60 @else {{ asset('storage/' . auth()->user()->img) }} @endif
+                                        src="@if ($message->from_user_id == auth()->id()) @if (auth()->user()->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif
                                             @else
-                                            @if ($to_user->img == 'default.jpg') https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60 @else {{ asset('storage/' . auth()->user()->img) }} @endif @endif" />
+                                            @if ($to_user->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif @endif" />
                                 </div>
                             </div>
                             <div class="chat-header">
@@ -89,8 +89,13 @@
         </div>
 
         <!-- Right Item -->
-        <div id="rightItem" class="hidden flex-col w-1/5 border-l-2 border-gray-800">
-            TES 1 2 3
+        <div id="rightItem" class="flex-col w-1/5 border-l-2 border-gray-800">
+            <img class="object-cover rounded-full w-52 h-52 mx-auto mt-8"
+                src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
+                alt="">
+
+            <div class="text-center mt-4">
+                <h1 class="text-2xl font-semibold">{{ $user->name }}</h1>
         </div>
 
     </div>
