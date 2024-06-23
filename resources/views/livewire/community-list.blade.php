@@ -11,7 +11,10 @@
                 </h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">
-                {{ $commun->description }}
+                {{ $commun->tagline }}
+            </p>
+            <p class="mb-3 font-normal text-gray-700">
+                {{ $commun->user->name }}
             </p>
         </div>
     </div>

@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Auth;
+use App\Models\Members;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Community;
@@ -21,6 +22,7 @@ class CommunityCreate extends Component
     public $guide;
     public $members_id;
     public $categoryList = [];
+    public $community;
 
     protected $rules = [
         'name' => 'required|string|max:255',
@@ -44,7 +46,7 @@ class CommunityCreate extends Component
         $imgPath = $this->img->store('images', 'public');
 
 
-        Community::create([
+        $this->community = Community::create([
              'name' => $this->name,
              'img' => $imgPath,
              'tagline' => $this->tagline,
@@ -52,6 +54,14 @@ class CommunityCreate extends Component
              'description' => $this->description,
              'guide' => $this->guide,
              'members_id' => Auth::id(),
+        ]);
+
+        $community_id = $this->community->id;
+
+        Members::create([
+            'user_id' => Auth::id(),
+            'community_id' => $community_id,
+            'role' => 'admin',
         ]);
         
         unlink($this->img->getRealPath());

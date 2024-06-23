@@ -14,4 +14,5 @@ class Members extends Model
         'community_id',
         'role',
     ];
+
 }

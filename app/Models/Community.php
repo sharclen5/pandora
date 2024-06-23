@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Members;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -19,5 +20,15 @@ class Community extends Model
         'guide',
         'members_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'members_id');
+    }
+
+    public function members()
+    {
+        return $this->hasMany(Members::class, 'community_id');
+    }
 
 }
