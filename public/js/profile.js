@@ -15,7 +15,7 @@ function showCommunity() {
     document.getElementById('security').style.display = 'none';
     document.getElementById('users').style.display = 'none';
     document.getElementById('profileLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
-    document.getElementById('communityLink').classList.add('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('communityLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('usersLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
 }
@@ -39,6 +39,6 @@ function showUsers() {
     document.getElementById('profileLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
-    document.getElementById('usersLink').classList.add('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('usersLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 

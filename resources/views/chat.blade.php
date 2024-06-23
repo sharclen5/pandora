@@ -1,39 +1,37 @@
 <x-layout>
+    <!-- Chatting -->
+    <div class="flex flex-row justify-between bg-white h-screen">
 
+        <!-- Chat List -->
+        <div class="flex flex-col w-1/4 border-r-2 border-gray-800">
+            <!-- Search Component -->
+            <div class="px-2">
+                <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
+            </div>
+            <div class="border-b-2 border-gray-800 py-4 px-2">
+              <input type="text" placeholder="search chatting" class="py-2 px-2 border-2 border-gray-800 rounded-2xl w-full">
+            </div>
 
-    <x-layout>
-        <div id="main">
-    
-            <div id="community" class="grid grid-cols-12 gap-4">
-        
-                {{-- Sisi kiri --}}
-                <div id="kiri" class="col-span-7 mt-24 px-5">
-                    @foreach ($users as $user)
-                    <a href="{{ route('chat', $user) }}"
-                    class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 mb-5">
-                    <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
-                      src="
-                        @if ($user->img == 'default.jpg')
-                          https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
-                        @else
-                          {{ asset('storage/' . auth()->user()->img) }}
-                        @endif
-                      " alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $user->name }}</h5>
-                    </div>
+            <!-- Dynamic User List from Chat.pdf -->
+            <div class="flex flex-col w-full overflow-y-auto">
+                @foreach ($users as $user)
+                    <a href="{{ route('chat', $user) }}" class="flex flex-row py-4 px-2 justify-center items-center border-b-2 border-gray-800 hover:bg-gray-100">
+                        <div class="w-1/5">
+                            <img class="object-cover h-12 w-12 rounded-full" src="{{ $user->img == 'default.jpg' ? 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60' : asset('storage/' . $user->img) }}" alt="">
+                        </div>
+                        <div class="w-full">
+                            <div class="text-lg font-semibold">{{ $user->name }}</div>
+                            <span class="text-gray-500">Last message preview...</span>
+                        </div>
                     </a>
-                    @endforeach
-                </div>
-        
-                {{-- Sisi kanan --}}
-                <div id="kanan" class="col-span-5 mt-24 px-7 ml-8 mb-2  bg-white border border-gray-200"> 
-                  Begin your chat with someone!!
-                </div>
-        
+                @endforeach
+            </div>
         </div>
-        
-    </x-layout>
 
+        <!-- Message Section -->
+        <div class="w-full flex justify-center items-center text-center"> 
+          Begin your chat with someone!!
+        </div>
+    </div>
 
 </x-layout>

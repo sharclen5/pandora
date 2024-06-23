@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User;
 
 class Chat extends Component
 {   
+    public $isPollingActive = true;
     public User $user;
     public $message = '';
 
@@ -25,6 +26,7 @@ class Chat extends Component
                     ->where('from_user_id', $this->user->id);
             })->orderBy('created_at', 'asc')->get(),
             'to_user' => $this->user,
+            'isPollingActive' => $this->isPollingActive
         ]);
     }
 
