@@ -1,14 +1,12 @@
 <div class="overflow-x-auto">
-    <table class="w-full text-sm text-left text-white dark:text-white">
+    <table class="w-full text-sm text-left text-white">
         <thead
-            class="text-xs text-white uppercase bg-gray-50 dark:bg-blue-500 dark:text-white">
+            class="text-xs text-white uppercase bg-blue-400">
             <tr>
                 <th scope="col" class="px-4 py-4">Picture</th>
                 <th scope="col" class="px-4 py-4">Community Name</th>
                 <th scope="col" class="px-4 py-3">Members</th>
-                <th scope="col" class="px-4 py-3">
-                    <span class="sr-only">Actions</span>
-                </th>
+                <th scope="col" class="px-4 py-3 flex justify-end">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -17,14 +15,16 @@
                 <td class="px-4 py-3">
                     <img class="rounded-t-lg" src="{{ asset('storage/' .$commun->img) }}" alt="" style="width: 50px; height: 50px;" />
                 </td>
-                <th scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td class="px-4 py-3">
                     {{ $commun->name }}
-                </th>
-                <td class="px-4 py-3">{{ $commun->members->count() }}</td>
+                </td>
+                <td class="px-4 py-3">
+                    {{ $commun->members->count() }}
+                </td>
                 <td class="px-4 py-3 flex items-center justify-end">
-                    <button id="apple-imac-27-dropdown-button"
-                        data-dropdown-toggle="apple-imac-27-dropdown"
-                        class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-white dark:hover:text-gray-100"
+                    <button id="{{ $commun->name }}-button"
+                        data-dropdown-toggle="{{ $commun->name }}-dropdown"
+                        class="inline-flex items-center text-sm font-medium hover:bg-blue-400 p-1.5 text-center hover:text-gray-800 rounded-lg focus:outline-none"
                         type="button">
                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                             viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -32,16 +32,16 @@
                                 d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                         </svg>
                     </button>
-                    <div id="apple-imac-27-dropdown"
-                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm"
-                            aria-labelledby="apple-imac-27-dropdown-button">
+                    <div id="{{ $commun->name }}-dropdown"
+                        class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
+                        <ul class="py-1 text-sm bg-blue-500"
+                            aria-labelledby="{{ $commun->name }}-button">
                             <li>
-                                <button type="button" data-modal-target="updateCommunityModal"
-                                    data-modal-toggle="updateCommunityModal"
-                                    class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                <button type="button" data-modal-target="update{{ $commun->name }}Modal"
+                                    data-modal-toggle="update{{ $commun->name }}Modal"
+                                    class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                     <svg class="w-4 h-4 mr-2"
-                                        xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000f/svg" viewbox="0 0 20 20"
                                         fill="currentColor" aria-hidden="true">
                                         <path
                                             d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
@@ -54,7 +54,7 @@
                             <li>
                                 <button type="button" data-modal-target="static-modal"
                                     data-modal-toggle="static-modal"
-                                    class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                    class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                     <svg class="w-4 h-4 mr-2"
                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                         fill="currentColor" aria-hidden="true">
@@ -68,7 +68,7 @@
                             <li>
                                 <button type="button" data-modal-target="deleteModal"
                                     data-modal-toggle="deleteModal"
-                                    class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                    class="flex w-full items-center py-2 px-4 hover:bg-blue-400 text-red-400 hover:text-red-600">
                                     <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                         fill="none" xmlns="http://www.w3.org/2000/svg"
                                         aria-hidden="true">
