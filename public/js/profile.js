@@ -39,6 +39,6 @@ function showUsers() {
     document.getElementById('profileLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
-    document.getElementById('usersLink').classList.add('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('usersLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 

@@ -32,7 +32,7 @@
 
 
         <div id="profile" 
-            class="hidden highlight-box border-2 bg-blue-500 border-blue-500 rounded-md mt-8 mb-12 px-10 py-6 max-w-3xl w-full mx-auto box">
+            class="highlight-box border-2 bg-blue-500 border-blue-500 rounded-md mt-8 mb-12 px-10 py-6 max-w-3xl w-full mx-auto box">
 
             <div class="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
                 <h2 class="pl-6 text-2xl font-bold sm:text-xl">Public Profile</h2>
@@ -83,7 +83,7 @@
 
         </div>
 
-        <div id="community" style="" class="flex justify-center items-center w-full h-full mt-8">
+        <div id="community" class="hidden flex justify-center items-center w-full h-full mt-8">
 
             <!-- Start block -->
             <section>
@@ -744,7 +744,7 @@
 
         </div>
 
-        <div id="security" style="display: none">
+        <div id="security" class="hidden">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
                 <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                     <div class="max-w-xl">
@@ -760,7 +760,7 @@
             </div>
         </div>
 
-        <div id="users" style="display: none" class="flex justify-center items-center w-full h-full mt-8">
+        <div id="users" class="hidden justify-center items-center w-full h-full mt-8">
             <!-- Start block -->
             <section>
               <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
