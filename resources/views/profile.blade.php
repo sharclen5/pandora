@@ -32,7 +32,7 @@
 
 
         <div id="profile" 
-            class="highlight-box border-2 bg-blue-500 border-blue-500 rounded-md mt-8 mb-12 px-10 py-6 max-w-3xl w-full mx-auto box">
+            class="hidden highlight-box border-2 bg-blue-500 border-blue-500 rounded-md mt-8 mb-12 px-10 py-6 max-w-3xl w-full mx-auto box">
 
             <div class="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
                 <h2 class="pl-6 text-2xl font-bold sm:text-xl">Public Profile</h2>
@@ -40,7 +40,7 @@
                 <div class="grid max-w-2xl mx-auto mt-8">
                     <div class="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
 
-                        <img class="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300 dark:ring-indigo-500"
+                        <img class="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300"
                             src="
                               @if (auth()->user()->img == 'default.jpg')
                                 https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
@@ -83,13 +83,13 @@
 
         </div>
 
-        <div id="community" style="display: none" class="flex justify-center items-center w-full h-full mt-8">
+        <div id="community" style="" class="flex justify-center items-center w-full h-full mt-8">
 
             <!-- Start block -->
             <section>
                 <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
                     <!-- Start coding here -->
-                    <div class="bg-white dark:bg-blue-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                    <div class="bg-blue-700 relative shadow-md sm:rounded-lg overflow-hidden">
                         <div
                             class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                             <div class="w-full md:w-1/2">
@@ -107,16 +107,16 @@
                                             </svg>
                                         </div>
                                         <input type="text" id="simple-search"
-                                            class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-blue-500 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                                             placeholder="Search" required="">
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="overflow-x-auto">
-                            <table class="w-full text-sm text-left text-white dark:text-white">
+                            <table class="w-full text-sm text-left text-white">
                                 <thead
-                                    class="text-xs text-white uppercase bg-gray-50 dark:bg-blue-500 dark:text-white">
+                                    class="text-xs text-gray-100 uppercase bg-blue-500 ">
                                     <tr>
                                         <th scope="col" class="px-4 py-4">Picture</th>
                                         <th scope="col" class="px-4 py-4">Community Name</th>
@@ -130,10 +130,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-b dark:border-gray-700">
+                                    <tr class="border-b">
                                         <td class="px-4 py-3">IMAGE</td>
                                         <th scope="row"
-                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            class="px-4 py-3 font-medium whitespace-nowrap">
                                             Apple iMac 27&#34;</th>
                                         <td class="px-4 py-3">PC</td>
                                         <td class="px-4 py-3">Apple</td>
@@ -143,7 +143,7 @@
                                         <td class="px-4 py-3 flex items-center justify-end">
                                             <button id="apple-imac-27-dropdown-button"
                                                 data-dropdown-toggle="apple-imac-27-dropdown"
-                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-white dark:hover:text-gray-100"
+                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 p-1.5 text-center hover:text-gray-800 focus:bg-white  focus:text-gray-800 rounded-lg focus:outline-none"
                                                 type="button">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -152,13 +152,13 @@
                                                 </svg>
                                             </button>
                                             <div id="apple-imac-27-dropdown"
-                                                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                                class="hidden z-10 w-44 bg-blue-400 rounded divide-y divide-gray-100 shadow">
                                                 <ul class="py-1 text-sm"
                                                     aria-labelledby="apple-imac-27-dropdown-button">
                                                     <li>
                                                         <button type="button" data-modal-target="updateCommunityModal"
                                                             data-modal-toggle="updateCommunityModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -173,7 +173,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="static-modal"
                                                             data-modal-toggle="static-modal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -187,7 +187,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="deleteModal"
                                                             data-modal-toggle="deleteModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 text-red-500">
                                                             <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                 aria-hidden="true">
@@ -202,10 +202,10 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-b dark:border-gray-700">
+                                    <tr class="border-b">
                                         <td class="px-4 py-3">IMAGE</td>
                                         <th scope="row"
-                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            class="px-4 py-3 font-medium whitespace-nowrap">
                                             Apple iMac 20&#34;</th>
                                         <td class="px-4 py-3">PC</td>
                                         <td class="px-4 py-3">Apple</td>
@@ -215,7 +215,7 @@
                                         <td class="px-4 py-3 flex items-center justify-end">
                                             <button id="apple-imac-20-dropdown-button"
                                                 data-dropdown-toggle="apple-imac-20-dropdown"
-                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-white dark:hover:text-gray-100"
+                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 p-1.5 text-center hover:text-gray-800 focus:bg-white  focus:text-gray-800 rounded-lg focus:outline-none"
                                                 type="button">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -224,13 +224,13 @@
                                                 </svg>
                                             </button>
                                             <div id="apple-imac-20-dropdown"
-                                                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                                class="hidden z-10 w-44 bg-blue-400 rounded divide-y divide-gray-100 shadow">
                                                 <ul class="py-1 text-sm"
                                                     aria-labelledby="apple-imac-20-dropdown-button">
                                                     <li>
                                                         <button type="button" data-modal-target="updateCommunityModal"
                                                             data-modal-toggle="updateCommunityModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -245,7 +245,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="static-modal"
                                                             data-modal-toggle="static-modal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -259,7 +259,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="deleteModal"
                                                             data-modal-toggle="deleteModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 text-red-500">
                                                             <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                 aria-hidden="true">
@@ -274,10 +274,10 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-b dark:border-gray-700">
+                                    <tr class="border-b">
                                         <td class="px-4 py-3">IMAGE</td>
                                         <th scope="row"
-                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            class="px-4 py-3 font-medium whitespace-nowrap">
                                             Apple iPhone 14</th>
                                         <td class="px-4 py-3">Phone</td>
                                         <td class="px-4 py-3">Apple</td>
@@ -287,7 +287,7 @@
                                         <td class="px-4 py-3 flex items-center justify-end">
                                             <button id="apple-iphone-14-dropdown-button"
                                                 data-dropdown-toggle="apple-iphone-14-dropdown"
-                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-white dark:hover:text-gray-100"
+                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 p-1.5 text-center hover:text-gray-800 focus:bg-white  focus:text-gray-800 rounded-lg focus:outline-none"
                                                 type="button">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -296,13 +296,13 @@
                                                 </svg>
                                             </button>
                                             <div id="apple-iphone-14-dropdown"
-                                                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                                class="hidden z-10 w-44 bg-blue-400 rounded divide-y divide-gray-100 shadow">
                                                 <ul class="py-1 text-sm"
                                                     aria-labelledby="apple-iphone-14-dropdown-button">
                                                     <li>
                                                         <button type="button" data-modal-target="updateCommunityModal"
                                                             data-modal-toggle="updateCommunityModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -317,7 +317,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="static-modal"
                                                             data-modal-toggle="static-modal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -331,7 +331,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="deleteModal"
                                                             data-modal-toggle="deleteModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 text-red-500">
                                                             <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                 aria-hidden="true">
@@ -346,10 +346,10 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="border-b dark:border-gray-700">
+                                    <tr class="border-b">
                                         <td class="px-4 py-3">IMAGE</td>
                                         <th scope="row"
-                                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                            class="px-4 py-3 font-medium whitespace-nowrap">
                                             Monitor BenQ EX2710Q</th>
                                         <td class="px-4 py-3">TV/Monitor</td>
                                         <td class="px-4 py-3">BenQ</td>
@@ -359,7 +359,7 @@
                                         <td class="px-4 py-3 flex items-center justify-end">
                                             <button id="benq-ex2710q-dropdown-button"
                                                 data-dropdown-toggle="benq-ex2710q-dropdown"
-                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 dark:hover:bg-gray-700 p-1.5 dark:hover-bg-gray-800 text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-white dark:hover:text-gray-100"
+                                                class="inline-flex items-center text-sm font-medium hover:bg-gray-100 p-1.5 text-center hover:text-gray-800 focus:bg-white  focus:text-gray-800 rounded-lg focus:outline-none"
                                                 type="button">
                                                 <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                                     viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -368,13 +368,13 @@
                                                 </svg>
                                             </button>
                                             <div id="benq-ex2710q-dropdown"
-                                                class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
+                                                class="hidden z-10 w-44 bg-blue-400 rounded divide-y divide-gray-100 shadow">
                                                 <ul class="py-1 text-sm"
                                                     aria-labelledby="benq-ex2710q-dropdown-button">
                                                     <li>
                                                         <button type="button" data-modal-target="updateCommunityModal"
                                                             data-modal-toggle="updateCommunityModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -389,7 +389,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="static-modal"
                                                             data-modal-toggle="static-modal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white dark:text-gray-200">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 hover:text-gray-800">
                                                             <svg class="w-4 h-4 mr-2"
                                                                 xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
                                                                 fill="currentColor" aria-hidden="true">
@@ -403,7 +403,7 @@
                                                     <li>
                                                         <button type="button" data-modal-target="deleteModal"
                                                             data-modal-toggle="deleteModal"
-                                                            class="flex w-full items-center py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 text-red-500 dark:hover:text-red-400">
+                                                            class="flex w-full items-center py-2 px-4 hover:bg-blue-300 text-red-500">
                                                             <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                                 fill="none" xmlns="http://www.w3.org/2000/svg"
                                                                 aria-hidden="true">
@@ -423,16 +423,16 @@
                         </div>
                         <nav class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
                             aria-label="Table navigation">
-                            <span class="text-sm font-normal text-gray-500 dark:text-white">
+                            <span class="text-sm font-normal">
                                 Showing
-                                <span class="font-semibold text-gray-900 dark:text-white">1-10</span>
+                                <span class="font-extrabold text-blue-300">1-10</span>
                                 of
-                                <span class="font-semibold text-gray-900 dark:text-white">1000</span>
+                                <span class="font-extrabold text-blue-300">1000</span>
                             </span>
-                            <ul class="inline-flex items-stretch -space-x-px">
+                            <ul class="inline-flex items-stretch -space-x-px bg-blue-400">
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">
+                                        class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-blue-300 rounded-l-lg border border-gray-300 hover:bg-blue-400 hover:text-white">
                                         <span class="sr-only">Previous</span>
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                             viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -444,27 +444,27 @@
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">1</a>
+                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-blue-300 border border-gray-300 hover:bg-blue-400 hover:text-white">1</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">2</a>
+                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-blue-300 border border-gray-300 hover:bg-blue-400 hover:text-white">2</a>
                                 </li>
                                 <li>
                                     <a href="#" aria-current="page"
-                                        class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-blue-600 dark:text-white">3</a>
+                                        class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700">3</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">...</a>
+                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-blue-300 border border-gray-300 hover:bg-blue-400 hover:text-white">...</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">100</a>
+                                        class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-blue-300 border border-gray-300 hover:bg-blue-400 hover:text-white">100</a>
                                 </li>
                                 <li>
                                     <a href="#"
-                                        class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white">
+                                        class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-blue-300 rounded-r-lg border border-gray-300 hover:bg-blue-400 hover:text-white">
                                         <span class="sr-only">Next</span>
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
                                             viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -485,13 +485,13 @@
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full max-w-2xl max-h-full">
                     <!-- Modal content -->
-                    <div class="relative p-4 bg-white rounded-lg shadow dark:bg-blue-500 sm:p-5">
+                    <div class="relative p-4 bg-white rounded-lg shadow sm:p-5">
                         <!-- Modal header -->
                         <div
-                            class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Update Community</h3>
+                            class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5">
+                            <h3 class="text-lg font-semibold text-gray-900">Update Community</h3>
                             <button type="button"
-                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                                 data-modal-toggle="updateCommunityModal">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -567,10 +567,10 @@
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full max-w-7xl max-h-full">
                     <!-- Modal content -->
-                    <div class="relative text-white bg-white rounded-lg shadow dark:bg-gray-700 flex">
+                    <div class="relative text-white bg-blue-500 rounded-lg shadow flex">
 
                         <!-- Left part -->
-                        <div class="w-1/4 bg-gray-200 dark:bg-gray-500">
+                        <div class="w-1/4 bg-blue-400">
                             <img src="{{ asset('cdetail.png') }}" alt="Image Description"
                                 class="w-full h-auto object-cover mb-4">
                             <h1 class="text-4xl mb-3 text-center">Tech Inovator</h1>
@@ -579,7 +579,7 @@
                             <div class="text-lg mb-1 ml-16">
 
                                 <div class="flex items-center">
-                                    <svg class="mr-2 w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                                    <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd"
@@ -589,7 +589,7 @@
                                 </div>
 
                                 <div class="flex items-center">
-                                    <svg class="mr-2 w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                                    <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd"
@@ -599,7 +599,7 @@
                                 </div>
 
                                 <div class="flex items-center">
-                                    <svg class="mr-2 w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                                    <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="currentColor" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd"
@@ -609,7 +609,7 @@
                                 </div>
 
                                 <div class="flex items-center">
-                                    <svg class="mr-2 w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
+                                    <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -629,9 +629,9 @@
 
                             <!-- Modal header -->
                             <div
-                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
                                 <button type="button"
-                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                                     data-modal-hide="static-modal">
                                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="none" viewBox="0 0 14 14">
@@ -666,7 +666,7 @@
                                 <h1 class="text-3xl">Rules and Guidelines</h1>
                                 <p class="text-base leading-relaxed text-white">
 
-                                <ol class="space-y-4 text-gray-500 list-decimal list-inside dark:text-white">
+                                <ol class="space-y-4 list-decimal list-inside">
                                     <li>
                                         List item one
                                         <ul class="ps-5 mt-2 space-y-1 list-disc list-inside">
@@ -709,9 +709,9 @@
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full max-w-md max-h-full">
                     <!-- Modal content -->
-                    <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
+                    <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5">
                         <button type="button"
-                            class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                             data-modal-toggle="deleteModal">
                             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -721,20 +721,20 @@
                             </svg>
                             <span class="sr-only">Close modal</span>
                         </button>
-                        <svg class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true"
+                        <svg class="text-gray-400 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true"
                             fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <p class="mb-4 text-gray-500 dark:text-gray-300">Are you sure you want to delete this item?
+                        <p class="mb-4 text-gray-500">Are you sure you want to delete this item?
                         </p>
                         <div class="flex justify-center items-center space-x-4">
                             <button data-modal-toggle="deleteModal" type="button"
-                                class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
+                                class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10">No,
                                 cancel</button>
                             <button type="submit"
-                                class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">Yes,
+                                class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300">Yes,
                                 I'm sure</button>
                         </div>
                     </div>
@@ -766,7 +766,7 @@
               <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
                 <!-- Start coding here -->
                 <div
-                  class="bg-white dark:bg-blue-800 relative shadow-md sm:rounded-lg overflow-hidden"
+                  class="bg-white relative shadow-md sm:rounded-lg overflow-hidden"
                 >
                   <div
                     class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4"
@@ -795,7 +795,7 @@
                           <input
                             type="text"
                             id="simple-search"
-                            class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-blue-500 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2"
                             placeholder="Search"
                             required=""
                           />
@@ -805,9 +805,9 @@
                   </div>
           
                   <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left text-white dark:text-white">
+                    <table class="w-full text-sm text-left text-white">
                       <thead
-                        class="text-xs text-white uppercase bg-gray-50 dark:bg-blue-500 dark:text-white"
+                        class="text-xs text-white uppercase bg-gray-50"
                       >
                         <tr>
                           <th scope="col" class="px-4 py-4">Picture</th>
@@ -821,11 +821,11 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr class="border-b dark:border-gray-700">
+                        <tr class="border-b">
                           <td class="px-4 py-3">IMAGE</td>
                           <th
                             scope="row"
-                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
                           >
                             Sharclen
                           </th>
@@ -837,7 +837,7 @@
                               type="button"
                               data-modal-target="usersdeleteModal"
                               data-modal-toggle="usersdeleteModal"
-                              class="flex items-center py-2 px-4 hover:bg-blue-100 dark:hover:bg-blue-500 text-red-500 dark:hover:text-red-400"
+                              class="flex items-center py-2 px-4 hover:bg-blue-100 text-red-500"
                             >
                               <svg
                                 class="w-5 h-5"
@@ -856,11 +856,11 @@
                             </button>
                           </td>
                         </tr>
-                        <tr class="border-b dark:border-gray-700">
+                        <tr class="border-b">
                           <td class="px-4 py-3">IMAGE</td>
                           <th
                             scope="row"
-                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
                           >
                             jasmineaf22
                           </th>
@@ -873,7 +873,7 @@
                               type="button"
                               data-modal-target="usersdeleteModal"
                               data-modal-toggle="usersdeleteModal"
-                              class="flex items-center py-2 px-4 hover:bg-blue-200 dark:hover:bg-blue-500 text-red-500 dark:hover:text-red-400"
+                              class="flex items-center py-2 px-4 hover:bg-blue-200 text-red-500"
                             >
                               <svg
                                 class="w-5 h-5"
@@ -892,11 +892,11 @@
                             </button>
                           </td>
                         </tr>
-                        <tr class="border-b dark:border-gray-700">
+                        <tr class="border-b">
                           <td class="px-4 py-3">IMAGE</td>
                           <th
                             scope="row"
-                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
                           >
                             katsuku27
                           </th>
@@ -908,7 +908,7 @@
                               type="button"
                               data-modal-target="usersdeleteModal"
                               data-modal-toggle="usersdeleteModal"
-                              class="flex items-center py-2 px-4 hover:bg-blue-200 dark:hover:bg-blue-500 text-red-500 dark:hover:text-red-400"
+                              class="flex items-center py-2 px-4 hover:bg-blue-200 text-red-500"
                             >
                               <svg
                                 class="w-5 h-5"
@@ -927,11 +927,11 @@
                             </button>
                           </td>
                         </tr>
-                        <tr class="border-b dark:border-gray-700">
+                        <tr class="border-b">
                           <td class="px-4 py-3">IMAGE</td>
                           <th
                             scope="row"
-                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                            class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap"
                           >
                             cinainfor
                           </th>
@@ -943,7 +943,7 @@
                               type="button"
                               data-modal-target="usersdeleteModal"
                               data-modal-toggle="usersdeleteModal"
-                              class="flex items-center py-2 px-4 hover:bg-blue-100 dark:hover:bg-blue-500 text-red-500 dark:hover:text-red-400"
+                              class="flex items-center py-2 px-4 hover:bg-blue-100 text-red-500"
                             >
                               <svg
                                 class="w-5 h-5"
@@ -970,13 +970,13 @@
                     class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4"
                     aria-label="Table navigation"
                   >
-                    <span class="text-sm font-normal text-gray-500 dark:text-white">
+                    <span class="text-sm font-normal text-gray-500">
                       Showing
-                      <span class="font-semibold text-gray-900 dark:text-white"
+                      <span class="font-semibold text-gray-900"
                         >1-10</span
                       >
                       of
-                      <span class="font-semibold text-gray-900 dark:text-white"
+                      <span class="font-semibold text-gray-900"
                         >1000</span
                       >
                     </span>
@@ -984,7 +984,7 @@
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-blue-400 hover:text-white"
                         >
                           <span class="sr-only">Previous</span>
                           <svg
@@ -1005,14 +1005,14 @@
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-400 hover:text-white"
                           >1</a
                         >
                       </li>
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-400 hover:text-white"
                           >2</a
                         >
                       </li>
@@ -1020,28 +1020,28 @@
                         <a
                           href="#"
                           aria-current="page"
-                          class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700 dark:border-gray-700 dark:bg-blue-600 dark:text-white"
+                          class="flex items-center justify-center text-sm z-10 py-2 px-3 leading-tight text-primary-600 bg-primary-50 border border-primary-300 hover:bg-primary-100 hover:text-primary-700"
                           >3</a
                         >
                       </li>
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-400 hover:text-white"
                           >...</a
                         >
                       </li>
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-blue-400 hover:text-white"
                           >100</a
                         >
                       </li>
                       <li>
                         <a
                           href="#"
-                          class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-white dark:bg-blue-400 dark:border-gray-700 dark:text-white dark:hover:bg-blue-600 dark:hover:text-white"
+                          class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-blue-400 hover:text-white"
                         >
                           <span class="sr-only">Next</span>
                           <svg
@@ -1075,11 +1075,11 @@
               <div class="relative p-4 w-full max-w-md max-h-full">
                 <!-- Modal content -->
                 <div
-                  class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5"
+                  class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5"
                 >
                   <button
                     type="button"
-                    class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                     data-modal-toggle="usersdeleteModal"
                   >
                     <svg
@@ -1098,7 +1098,7 @@
                     <span class="sr-only">Close modal</span>
                   </button>
                   <svg
-                    class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto"
+                    class="text-gray-400 w-11 h-11 mb-3.5 mx-auto"
                     aria-hidden="true"
                     fill="currentColor"
                     viewbox="0 0 20 20"
@@ -1110,20 +1110,20 @@
                       clip-rule="evenodd"
                     />
                   </svg>
-                  <p class="mb-4 text-gray-500 dark:text-gray-300">
+                  <p class="mb-4 text-gray-500">
                     Are you sure you want to delete this item?
                   </p>
                   <div class="flex justify-center items-center space-x-4">
                     <button
                       data-modal-toggle="usersdeleteModal"
                       type="button"
-                      class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                      class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10"
                     >
                       No, cancel
                     </button>
                     <button
                       type="submit"
-                      class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900"
+                      class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
                     >
                       Yes, I'm sure
                     </button>

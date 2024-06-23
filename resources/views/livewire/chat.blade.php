@@ -4,21 +4,21 @@
     <div class="flex flex-row justify-between bg-white h-screen">
 
         <!-- Chat List -->
-        <div class="flex flex-col w-1/5 border-r-2 border-gray-800">
+        <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-400">
             <!-- Search Component -->
             <div class="px-2">
                 <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
             </div>
             <div class="border-b-2 border-gray-800 py-4 px-2">
                 <input type="text" placeholder="search chatting"
-                    class="py-2 px-2 border-2 border-gray-800 rounded-2xl w-full">
+                    class="py-2 px-2 border-2 border-gray-200 bg-gray-800 rounded-2xl w-full">
             </div>
 
             <!-- Dynamic User List from Chat.pdf -->
             <div class="flex flex-col w-full overflow-y-auto">
                 @foreach ($users as $user)
                     <a href="{{ route('chat', $user) }}"
-                        class="flex flex-row py-4 px-2 justify-center items-center border-b-2 border-gray-800 hover:bg-gray-100">
+                        class="flex flex-row py-4 px-2 justify-center items-center border-b-2 text-white hover:text-black border-gray-800 hover:bg-gray-100">
                         <div class="w-1/5">
                             <img class="object-cover h-12 w-12 rounded-full"
                                 src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
@@ -26,7 +26,7 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            <span class="text-gray-500">Last message preview...</span>
+                            <span class="text-gray-800">Last message preview...</span>
                         </div>
                     </a>
                 @endforeach
@@ -36,18 +36,23 @@
         <!-- Chat Container -->
         <div id="chatContainer" class="w-4/5 flex flex-col">
             <!-- Chat Header -->
-            <div id="chatHeader" class="hover:cursor-pointer flex items-center justify-between bg-gray-200 border-b-2 border-gray-800 px-4 py-7 
+            <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-400 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" onclick="showRightSide()">
-                <h2 class="text-gray-800 text-lg font-semibold mt-1">Chat Header</h2>
-                <button class="text-gray-500 hover:text-gray-700">Settings</button>
+                <img class="rounded-full w-14 h-14 mt-2"
+                src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
+                alt="">                      
+                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $user->name }}</h2>
             </div>
+
             <!-- Message Section -->
-            <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all">
-                <div>
+            <div id="chatBox" class="w-full mt-20 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
+                <div>         
+
+
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">
-                                <div class="w-10 rounded-full">
+                                <div class="w-10 h-10 rounded-full mb-8">
                                     <img alt="Tailwind CSS chat bubble component"
                                         src="@if ($message->from_user_id == auth()->id()) @if (auth()->user()->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif
                                             @else
@@ -58,16 +63,50 @@
                                 {{ $message->fromUser->name }}
                                 <time class="text-xs opacity-50">{{ $message->created_at->diffForHumans() }}</time>
                             </div>
-                            <div class="chat-bubble">{{ $message->message }}</div>
+                            
+                            <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-blue-400 @if($message->user_id == auth()->id()) rounded-ee-xl rounded-s-xl  @else rounded-e-xl rounded-es-xl @endif">
+                                <p class="text-sm font-normal text-gray-900 dark:text-white">{{ $message->message }}</p>
+                            </div>
+
                             <div class="chat-footer opacity-50">
                                 Delivered
                             </div>
+
+                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                                <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+                                   <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                </svg>
+                             </button>
+                             <div id="dropdownDots" class="z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+                                   <li>
+                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</a>
+                                   </li>
+                                   <li>
+                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</a>
+                                   </li>
+                                   <li>
+                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
+                                   </li>
+                                   <li>
+                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+                                   </li>
+                                   <li>
+                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+                                   </li>
+                                </ul>
+                             </div>
+
+                            
                         </div>
                     @endforeach
+                    
                 </div>
+
             </div>
+            
             <!-- Chat Input -->
-            <div id="chatInput" class="bg-white form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
+            <div id="chatInput" class="bg-gray-400 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
                 <form action="" wire:submit.prevent="sendMessage" class="flex">
                     <textarea class="textarea textarea-bordered w-full mr-2 h-8" wire:model="message" placeholder="send your message"></textarea>
                     <button type="submit">
@@ -86,10 +125,11 @@
                     </button>
                 </form>
             </div>
+
         </div>
 
         <!-- Right Item -->
-        <div id="rightItem" class="flex-col w-1/5 border-l-2 border-gray-800">
+        <div id="rightItem" class="hidden flex-col w-1/5 border-l-2 border-gray-800">
             <img class="object-cover rounded-full w-52 h-52 mx-auto mt-8"
                 src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
                 alt="">
