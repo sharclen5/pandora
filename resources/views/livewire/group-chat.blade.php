@@ -60,7 +60,7 @@
 
             <!-- Message Section -->
             <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
-                <div>         
+                <div wire:poll.500ms>         
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">
@@ -71,7 +71,7 @@
                                             @if ($message->fromUser->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . $message->fromUser->img) }} @endif @endif" />
                                 </div>
                             </div>
-                            <div class="chat-header">
+                            <div class="chat-header text-white"">
                                 {{ $message->fromUser->name }}
                                 <time class="text-xs opacity-50">{{ $message->created_at->diffForHumans() }}</time>
                             </div>

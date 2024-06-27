@@ -60,7 +60,7 @@
 
             <!-- Message Section -->
             <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
-                <div>         
+                <div wire:poll.500ms>         
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">

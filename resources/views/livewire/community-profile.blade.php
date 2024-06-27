@@ -19,7 +19,7 @@
                             <path fill-rule="evenodd"
                                 d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
                                 clip-rule="evenodd" />
-                        </svg> 11.135 Members
+                        </svg> {{ $commun->members->count() }}
                     </div>
 
                     <div class="flex items-center">
@@ -39,7 +39,14 @@
                             <path fill-rule="evenodd"
                                 d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4Zm0 8v6h7v-6H4Zm16 6h-7v-6h7v6Z"
                                 clip-rule="evenodd" />
-                        </svg> {{ $commun->category }}
+                        </svg> 
+                            @if ($commun->category->count() == 1)
+                                {{ $category->name }}
+                            @elseif($commun->category->count() > 1)
+                                @foreach ($commun->category as $categori)
+                                    {{ $categori->name }}
+                                @endforeach
+                            @endif
                     </div>
 
                     <div class="flex items-center">
