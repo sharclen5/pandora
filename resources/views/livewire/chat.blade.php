@@ -39,9 +39,9 @@
             <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-400 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" onclick="showRightSide()">
                 <img class="rounded-full w-14 h-14 mt-2"
-                src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
+                src="{{ $to_user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
                 alt="">                      
-                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $user->name }}</h2>
+                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $to_user->name }}</h2>
             </div>
 
             <!-- Message Section -->

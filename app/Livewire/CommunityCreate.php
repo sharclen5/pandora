@@ -8,6 +8,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Community;
 use Livewire\WithFileUploads;
+use App\Models\CommunityCategories;
 
 class CommunityCreate extends Component
 {
@@ -17,7 +18,7 @@ class CommunityCreate extends Component
     public $name;
     public $img;
     public $tagline;
-    public $category;
+    public $category = [];
     public $description;
     public $guide;
     public $members_id;
@@ -28,9 +29,9 @@ class CommunityCreate extends Component
         'name' => 'required|string|max:255',
         'img' => 'required|image|max:1024',
         'tagline' => 'required|string|max:255',
-        'category' => 'required|string|max:255',
         'description' => 'required|string|max:1000',
         'guide' => 'required|string|max:1000',
+        'category'=> 'required',
     ];
 
     public function mount()
@@ -40,7 +41,7 @@ class CommunityCreate extends Component
 
     public function submit()
     {
-        
+
         $this->validate();
         
         $imgPath = $this->img->store('images', 'public');
@@ -50,7 +51,6 @@ class CommunityCreate extends Component
              'name' => $this->name,
              'img' => $imgPath,
              'tagline' => $this->tagline,
-             'category' => $this->category,
              'description' => $this->description,
              'guide' => $this->guide,
              'members_id' => Auth::id(),
@@ -63,6 +63,13 @@ class CommunityCreate extends Component
             'community_id' => $community_id,
             'role' => 'admin',
         ]);
+
+        foreach ($this->category as $category) {
+            CommunityCategories::create([
+                'community_id' => $community_id,
+                'category_id' => $category,
+            ]);
+        }
         
         unlink($this->img->getRealPath());
         session()->flash('message', 'Community created successfully.');

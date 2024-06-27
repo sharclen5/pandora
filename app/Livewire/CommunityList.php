@@ -10,8 +10,8 @@ class CommunityList extends Component
 {
 
     public $community;
-    public $user;
 
+    
     public function mount()
     {
         $this->community = Community::all();

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Members;
+use App\Models\CommunityCategories;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

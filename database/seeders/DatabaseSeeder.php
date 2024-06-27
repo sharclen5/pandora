@@ -14,11 +14,70 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::factory()->createMany([
+            [
+                'name' => 'Ghaza',
+                'email' => 'ghazaja2017@gmail.com',
+            ],
+            [
+                'name' => 'Nico',
+                'email' => 'nico@gmail.com',
+            ],
+            [
+                'name' => 'Mine',
+                'email' => 'jasmine@gmail.com',
+            ],
+        ]);
 
-        User::factory()->create([
-            'name' => 'Ghaza',
-            'email' => 'ghazaja2017@gmail.com',
+        Category::factory()->createMany([
+            [
+                'name' => 'art',
+            ],
+            [
+                'name' => 'Bussiness',
+            ],
+            [
+                'name' => 'Education',
+            ],
+            [
+                'name' => 'Entertainment',
+            ],
+            [
+                'name' => 'Family',
+            ],
+            [
+                'name' => 'Fashion',
+            ],
+            [
+                'name' => 'Food',
+            ],
+            [
+                'name' => 'Health',
+            ],
+            [
+                'name' => 'Music',
+            ],
+            [
+                'name' => 'News',
+            ],
+            [
+                'name' => 'Politics',
+            ],
+            [
+                'name' => 'Science',
+            ],
+            [
+                'name' => 'Sports',
+            ],
+            [
+                'name' => 'Technology',
+            ],
+            [
+                'name' => 'Travel',
+            ],
+            [
+                'name' => 'Others',
+            ],
         ]);
     }
 }

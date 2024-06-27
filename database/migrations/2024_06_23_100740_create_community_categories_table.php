@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('community', function (Blueprint $table) {
+        Schema::create('community_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('img');
-            $table->string('tagline');
-            $table->text('description');
-            $table->text('guide');
-            $table->string('members_id');
+            $table->foreignId('community_id')->constrained('community')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('community');
+        Schema::dropIfExists('community_categories');
     }
 };
