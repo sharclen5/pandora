@@ -53,9 +53,9 @@
             <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-600 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" onclick="showRightSide()">
                 <img class="rounded-full w-14 h-14 mt-2"
-                src="{{ $to_user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $to_user->img) }}"
+                src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
                 alt="">                      
-                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $to_user->name }}</h2>
+                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $commun->name }}</h2>
             </div>
 
             <!-- Message Section -->
@@ -68,7 +68,7 @@
                                     <img alt="Tailwind CSS chat bubble component"
                                         src="@if ($message->from_user_id == auth()->id()) @if (auth()->user()->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif
                                             @else
-                                            @if ($to_user->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif @endif" />
+                                            @if ($message->fromUser->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . $message->fromUser->img) }} @endif @endif" />
                                 </div>
                             </div>
                             <div class="chat-header">
@@ -101,7 +101,7 @@
                             </div>
                            
                         </div>
-                    @endforeach
+                    @endforeach 
                     
                 </div>
 

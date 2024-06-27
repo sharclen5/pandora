@@ -2,6 +2,8 @@
 
 use App\Models\User;
 use App\Livewire\Chat;
+use App\Models\Community;
+use App\Livewire\GroupChat;
 use App\Livewire\CommunityCreate;
 use App\Livewire\CommunityProfile;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +36,9 @@ Route::view('profile', 'profile')
     Route::get('/chat', function () {
         return view('chat', [
             'users' => User::where('id', '!=', auth()->id())->get(),
+            'communities' => Community::whereHas('members', function ($query) {
+                $query->where('user_id', auth()->id());
+            })->get(),
         ]);
     })->name('chatshow');
 
@@ -54,4 +59,6 @@ Route::view('profile', 'profile')
     // Route::get('/community/{community}', CommunityProfile::class);
 
     Route::get('chat/{user}', Chat::class)->name('chat');
+
+    Route::get('groupchat/{communityId}', GroupChat::class)->name('groupchat');
 require __DIR__.'/auth.php';

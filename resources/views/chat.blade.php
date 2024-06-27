@@ -14,6 +14,20 @@
 
             <!-- Dynamic User List from Chat.pdf -->
             <div class="flex flex-col w-full overflow-y-auto">
+                @foreach ($communities as $community)
+                    <a href="{{ route('groupchat', $community) }}"
+                        class="flex flex-row py-4 px-2 justify-center items-center border-b-2 text-white hover:text-black border-gray-800 hover:bg-gray-100">
+                        <div class="w-1/5">
+                            <img class="object-cover h-12 w-12 rounded-full"
+                                src="{{ $community->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $community->img) }}"
+                                alt="">
+                        </div>
+                        <div class="w-full">
+                            <div class="text-lg font-semibold">{{ $community->name }}</div>
+                            <span class="text-gray-800">Last message preview...</span>
+                        </div>
+                    </a>
+                @endforeach
                 @foreach ($users as $user)
                     <a href="{{ route('chat', $user) }}" class="flex flex-row py-4 px-2 justify-center items-center border-b-2 border-gray-800 hover:bg-gray-100">
                         <div class="w-1/5">
