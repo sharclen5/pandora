@@ -1,10 +1,10 @@
 <div id="main">
 
     <!-- Chatting -->
-    <div class="flex flex-row justify-between bg-white h-screen">
+    <div class="flex flex-row justify-between h-screen">
 
         <!-- Chat List -->
-        <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-400">
+        <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-500 opacity-90">
             <!-- Search Component -->
             <div class="px-2">
                 <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
@@ -36,7 +36,7 @@
         <!-- Chat Container -->
         <div id="chatContainer" class="w-4/5 flex flex-col">
             <!-- Chat Header -->
-            <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-400 border-b-2 border-gray-800 px-4 py-3 
+            <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-600 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" onclick="showRightSide()">
                 <img class="rounded-full w-14 h-14 mt-2"
                 src="{{ $to_user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
@@ -45,10 +45,8 @@
             </div>
 
             <!-- Message Section -->
-            <div id="chatBox" class="w-full mt-20 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
+            <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
                 <div>         
-
-
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">
@@ -64,40 +62,30 @@
                                 <time class="text-xs opacity-50">{{ $message->created_at->diffForHumans() }}</time>
                             </div>
                             
-                            <div class="flex flex-col leading-1.5 p-4 border-gray-200 bg-blue-400 @if($message->user_id == auth()->id()) rounded-ee-xl rounded-s-xl  @else rounded-e-xl rounded-es-xl @endif">
-                                <p class="text-sm font-normal text-gray-900 dark:text-white">{{ $message->message }}</p>
+                            <div class="flex flex-col leading-1.5 p-4 border-gray-200 @if ($message->from_user_id == auth()->id()) rounded-xl rounded-tr-none bg-blue-500 @else rounded-e-xl rounded-es-xl bg-gray-500 @endif">
+                                <p class="text-sm font-normal text-white">{{ $message->message }}</p>
                             </div>
 
-                            <div class="chat-footer opacity-50">
+                            <div class="chat-footer opacity-50 @if ($message->from_user_id == auth()->id()) @else mt-3 @endif">
                                 Delivered
                             </div>
 
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdown{{ $message->message }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
                                 <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
                                    <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                                 </svg>
-                             </button>
-                             <div id="dropdownDots" class="z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</a>
-                                   </li>
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</a>
-                                   </li>
+                            </button>
+                            <div id="dropdown{{ $message->message }}" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-40 @if ($message->from_user_id == auth()->id()) bg-blue-400 @else bg-gray-400 @endif">
+                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownMenuIconButton">
                                    <li>
                                       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
-                                   </li>
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
                                    </li>
                                    <li>
                                       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
                                    </li>
                                 </ul>
-                             </div>
-
-                            
+                            </div>
+                           
                         </div>
                     @endforeach
                     
@@ -106,9 +94,20 @@
             </div>
             
             <!-- Chat Input -->
-            <div id="chatInput" class="bg-gray-400 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
+            <div id="chatInput" class="bg-gray-600 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
                 <form action="" wire:submit.prevent="sendMessage" class="flex">
+
+
+                    <label for="fileInput" class="mr-4 mt-2 hover:cursor-pointer">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </label>
+                    <input id="fileInput" type="file" class="hidden">
+
                     <textarea class="textarea textarea-bordered w-full mr-2 h-8" wire:model="message" placeholder="send your message"></textarea>
+                    
                     <button type="submit">
                     <svg fill="#000000" class="h-8 w-8" version="1.1" id="Capa_1"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
