@@ -4,7 +4,7 @@
         <div class="relative text-white bg-white rounded-lg shadow dark:bg-gray-700 flex">
 
             <!-- Left part -->
-            <div class="w-1/4 bg-gray-200 dark:bg-gray-500">
+            <div class="w-1/4 bg-blue-400 dark:bg-gray-500">
                 <img src="{{ asset('storage/' . $commun->img) }}" alt="Image Description"
                     class="w-full h-auto object-cover mb-4">
                 <h1 class="text-4xl mb-3 text-center">{{ $commun->name }}</h1>
@@ -67,7 +67,7 @@
 
 
             <!-- Right part -->
-            <div class="w-3/4">
+            <div class="w-3/4 bg-blue-600">
 
                 <!-- Modal header -->
                 <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
@@ -86,18 +86,18 @@
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-2">
 
-                    <h1 class="text-3xl text-gray-500">Tagline</h1>
-                    <p class="text-base leading-relaxed text-gray-500">
+                    <h1 class="text-3xl ">Tagline</h1>
+                    <p class="text-base leading-relaxed ">
                         “{{ $commun->tagline }}”
                     </p>
 
-                    <h1 class="text-3xl mt-8 text-gray-500">Description</h1>
-                    <p class="text-base leading-relaxed text-gray-500">
+                    <h1 class="text-3xl mt-8 ">Description</h1>
+                    <p class="text-base leading-relaxed ">
                         {{ $commun->description }}
                     </p>
 
-                    <h1 class="text-3xl text-gray-500">Rules and Guidelines</h1>
-                    <p class="text-base leading-relaxed text-gray-500">
+                    <h1 class="text-3xl ">Rules and Guidelines</h1>
+                    <p class="text-base leading-relaxed ">
                         {{ $commun->guide }}
                     </p>
                 </div>

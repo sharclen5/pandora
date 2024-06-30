@@ -1,10 +1,8 @@
 <x-layout>
-    <div id="main">
-
-        <div id="community" class="grid grid-cols-12 gap-4 mt-12">
+        <div id="community" class="grid grid-cols-12 gap-4 mt-24">
     
             {{-- Sisi kiri --}}
-            <div id="kiri" class="col-span-7 mt-24 px-5">
+            <div id="kiri" class="col-span-7 mt-24 mb-40 px-5">
     
                 <h1 class="mb-10 mt-[-30px] text-4xl text-white">What might pique your interest</h1>
     
@@ -15,31 +13,31 @@
                             <!-- Item 1 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="{{ asset('dec1.webp') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                     alt="...">
                             </div>
                             <!-- Item 2 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="{{ asset('dec2.jpg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                     alt="...">
                             </div>
                             <!-- Item 3 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="{{ asset('dec3.jpg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                     alt="...">
                             </div>
                             <!-- Item 4 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="{{ asset('dec4.jpeg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                     alt="...">
                             </div>
                             <!-- Item 5 -->
                             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                                 <img src="{{ asset('dec5.webp') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                                    class="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                     alt="...">
                             </div>
                         </div>
@@ -121,7 +119,5 @@
     
             </div>
         </div>
-    
-    </div>
     
 </x-layout>
