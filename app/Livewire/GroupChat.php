@@ -48,6 +48,6 @@ class GroupChat extends Component
             'message' => $this->message,
         ]);
 
-        $this->message ='';
+        $this->message='';
     }
 }
