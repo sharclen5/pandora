@@ -27,7 +27,7 @@
             <nav id="user" class="flex justify-between bg-gray-900 text-white w-screen">
                 <div class="px-4 xl:px-12 py-2 flex w-full items-center">
                     <a class="text-2xl font-bold font-heading flex items-center" href="/">
-                        <img class="h-10" src="logo.png" alt="logo"> Pandora
+                        <img class="h-10" src="{{ asset('logo.png') }}" alt="logo"> Pandora
                     </a>
 
                     <!-- Nav Links -->

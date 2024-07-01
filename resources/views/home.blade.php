@@ -1,10 +1,8 @@
 <x-layout>
-    <div id="main">
-
-        <div id="community" class="grid grid-cols-12 gap-4 mt-12">
+        <div id="community" class="grid grid-cols-12 gap-4 mt-24">
     
             {{-- Sisi kiri --}}
-            <div id="kiri" class="col-span-7 mt-24 px-5">
+            <div id="kiri" class="col-span-7 mt-24 mb-40 px-5">
     
                 <h1 class="mb-10 mt-[-30px] text-4xl text-white">What might pique your interest</h1>
     
@@ -88,7 +86,5 @@
     
             </div>
         </div>
-    
-    </div>
     
 </x-layout>

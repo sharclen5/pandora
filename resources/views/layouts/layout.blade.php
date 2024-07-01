@@ -13,13 +13,11 @@
     @livewireStyles
 </head>
 
-<body>
+<body class="h-screen">
 
     <x-navbar></x-navbar>
 
-    <div id="main">
-    <main class="mt-12">{{ $slot }}</main>
-    </div>
+    <main class="mt-12 h-screen">{{ $slot }}</main>
     
     @livewireScripts
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
