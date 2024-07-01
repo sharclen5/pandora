@@ -59,25 +59,7 @@
     
                 <h1 class="mb-8 mt-[-45px] text-4xl text-white text-right mr-10">Popular right now</h1>
     
-                <a href="#"
-                    class="flex flex-col items-center bg-gradient-to-tr from-blue-400 to-blue-700 border hover:bg-blue-400 border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl mb-5">
-                    <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
-                        src="{{ asset('deca.jpg') }}" alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Art of Business</h5>
-                        <p class="mb-3 font-normal text-gray-300">A community for artists and entrepreneurs to discuss the business side of art, including marketing, sales, and branding.</p>
-                    </div>
-                </a>
-    
-                <a href="#"
-                    class="flex flex-col items-center bg-gradient-to-tr from-blue-400 to-blue-700 border hover:bg-blue-400 border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl mb-5">
-                    <img class="object-cover w-full rounded-t-lg md:h-[135px] md:w-auto md:rounded-none md:rounded-s-lg"
-                        src="{{ asset('decb.jpg') }}" alt="">
-                    <div class="flex flex-col justify-between p-4 leading-normal">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Culinary Classrooms</h5>
-                        <p class="mb-3 font-normal text-gray-300">A community for food enthusiasts and culinary students to share recipes, cooking techniques, and educational resources.</p>
-                    </div>
-                </a>
+                @livewire('home-populer')
     
                 <a href="{{ route('community') }}">
                 <p class="text-right mr-20 underline text-blue-400">See more</p>

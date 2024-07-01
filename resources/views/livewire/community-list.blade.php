@@ -121,9 +121,6 @@ aria-label="Sidenav" id="drawer-navigation">
     @endforeach
     
 </div>
-<div class="mt-6">
-    {{ $community->links() }}
-</div>
 
 </main>
     
