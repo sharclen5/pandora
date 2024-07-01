@@ -40,8 +40,14 @@ class GroupChat extends Component
         ]);
     }
 
+    protected $rules = [
+        'message' => 'required|string',
+    ];
+
     public function sendMessage()
     {
+        $this->validate();
+        
         GroupMessage::create([
             'from_user_id' => auth()->id(),
             'community_id' => $this->commun->id,

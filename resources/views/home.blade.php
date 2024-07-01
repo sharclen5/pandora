@@ -9,41 +9,8 @@
                 <h1 class="mb-10 mt-[-30px] text-4xl text-white">What might pique your interest</h1>
     
                 <div id="default-carousel" class="relative w-full" data-carousel="slide">
-                    <div class="relative">
-                        <!-- Carousel wrapper -->
-                        <div class="relative w-full h-96 overflow-hidden rounded-lg">
-                            <!-- Item 1 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('dec1.webp') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('dec2.jpg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
-                            </div>
-                            <!-- Item 3 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('dec3.jpg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
-                            </div>
-                            <!-- Item 4 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('dec4.jpeg') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
-                            </div>
-                            <!-- Item 5 -->
-                            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src="{{ asset('dec5.webp') }}"
-                                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                    alt="...">
-                            </div>
-                        </div>
-                    </div>
+                    @livewire('recomendation')
+                    
                     <!-- Slider indicators -->
                     <div class="absolute z-30 flex -translate-x-1/2 bottom-[-25px] left-1/2 space-x-3 rtl:space-x-reverse">
                         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"

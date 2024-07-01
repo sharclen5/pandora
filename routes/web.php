@@ -57,6 +57,7 @@ Route::view('profile', 'profile')
     })->name('profile');
 
     Route::get('/community/create', CommunityCreate::class);
+    //Route::get('/community/{community}', CommunityCategory::class);
 
     Route::get('chat/{user}', Chat::class)->name('chat');
 

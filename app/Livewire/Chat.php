@@ -38,14 +38,20 @@ class Chat extends Component
         ]);
     }
 
+    protected $rules = [
+        'message' => 'required|string',
+    ];
+    
     public function sendMessage()
     {
+        $this->validate();
+        
         Message::create([
             'from_user_id' => auth()->id(),
             'to_user_id' => $this->user->id,
             'message' => $this->message,
         ]);
-
+    
         $this->message ='';
     }
 }

@@ -13,26 +13,11 @@ class CommunityList extends Component
     use WithPagination;
 
     public $selectedCategory;
-    public $communities=[];
-
-    public function mount()
-    {
-        $this->selectedCategory = request()->query('category', $this->selectedCategory);
-    }
-
-    public function updatingSelectedCategory()
-    {
-        $this->resetPage();
-    }
+    public $communities;
 
     public function render()
     {
-        $communities = Community::when($this->selectedCategory, function ($query) {
-            $query->whereHas('category', function ($query) {
-                $query->where('category_id', $this->selectedCategory);
-            });
-        })->paginate(100);
-
+        $communities = Community::paginate(5);
         $categories = Category::all();
 
         return view('livewire.community-list', [
@@ -41,9 +26,4 @@ class CommunityList extends Component
         ]);
     }
 
-    public function setCategory($categoryId)
-    {
-        $this->selectedCategory = $categoryId;
-        $this->resetPage();
-    }
 }

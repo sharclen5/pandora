@@ -20,11 +20,19 @@ class JoinCommunity extends Component
     public function join()
     {
         $user = Auth::user();
+        $member = Members::where('user_id', $user->id)
+            ->where('community_id', $this->communityId)
+            ->first();
+
+        if ($member) {
+            session()->flash('message', 'You are already a member of the community!');
+        } else {
+            Members::create([
+                'user_id' => $user->id,
+                'community_id' => $this->communityId,
+           ]);
+        }
         
-        Members::create([
-            'user_id' => $user->id,
-            'community_id' => $this->communityId,
-       ]);
 
         session()->flash('message', 'You have joined the community!');
     }
