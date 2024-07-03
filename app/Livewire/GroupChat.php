@@ -28,7 +28,7 @@ class GroupChat extends Component
         $this->communities = Community::whereHas('members', function ($query) {
             $query->where('user_id', auth()->id());
         })->get();
-
+        $members = Members::with('user')->where('community_id', $this->commun->id)->get(); 
         return view('livewire.group-chat', [
             'users' => $users,
             'communities' => $this->communities,
@@ -36,8 +36,14 @@ class GroupChat extends Component
                 $query->where('community_id', $this->commun->id);
             })->orderBy('created_at', 'asc')->get(),
             'commun' => $this->commun,
-            'isPollingActive' => $this->isPollingActive
+            'isPollingActive' => $this->isPollingActive,
+            'members' => $members,
         ]);
+    }
+    
+    public function removePoll()
+    {
+        $this->isPollingActive = !$this->isPollingActive;
     }
 
     protected $rules = [

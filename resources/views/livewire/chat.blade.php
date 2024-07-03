@@ -26,7 +26,18 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $community->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
+                            <span class="text-gray-800"><span class="text-gray-800">
+                                @if (optional($community->latestGroupMessage()->first())->message)
+                                    @php
+                                    $latestGroupMessageWithUser = $community->latestGroupMessage()->with('fromUser')->first();
+                                    @endphp
+                                
+                                {{ optional($latestGroupMessageWithUser->fromUser)->name }}: {{ optional($community->latestGroupMessage()->first())->message }}    
+                                @else
+                                    No message available.
+                                @endif
+                                
+                            </span></span>
                         </div>
                     </a>
                 @endforeach
@@ -68,7 +79,7 @@
                                     <img alt="Tailwind CSS chat bubble component"
                                         src="@if ($message->from_user_id == auth()->id()) @if (auth()->user()->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif
                                             @else
-                                            @if ($to_user->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . auth()->user()->img) }} @endif @endif" />
+                                            @if ($message->fromUser->img == 'default.jpg') {{ asset('minisuibg.png') }} @else {{ asset('storage/' . $message->fromUser->img) }} @endif @endif" />
                                 </div>
                             </div>
                             <div class="chat-header">
@@ -84,16 +95,13 @@
                                 Delivered
                             </div>
 
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdown{{ $message->message }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdown{{ $message->id }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
                                 <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
                                    <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                                 </svg>
                             </button>
-                            <div id="dropdown{{ $message->message }}" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-40 @if ($message->from_user_id == auth()->id()) bg-blue-400 @else bg-gray-400 @endif">
+                            <div id="dropdown{{ $message->id }}" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-40 @if ($message->from_user_id == auth()->id()) bg-blue-400 @else bg-gray-400 @endif">
                                 <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownMenuIconButton">
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
-                                   </li>
                                    <li>
                                       <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
                                    </li>

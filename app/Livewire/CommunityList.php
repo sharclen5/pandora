@@ -15,6 +15,11 @@ class CommunityList extends Component
     public $selectedCategory;
     public $communities;
 
+    public function mount()
+    {
+        $this->selectedCategory = null;
+    }   
+
     public function render()
     {
         $communities = Community::paginate(5);

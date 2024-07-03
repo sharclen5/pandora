@@ -1,6 +1,6 @@
 <x-layout>
 
-
+    <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="w-full flex flex-col gap-5 px-3 md:px-16 lg:px-28 md:flex-row text-white mx-auto">
         <aside class="hidden py-4 md:w-1/3 lg:w-1/4 md:block">
             <div class="sticky flex flex-col gap-2 p-4 text-sm border-r border-indigo-100 top-12 h-screen">

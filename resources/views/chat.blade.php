@@ -1,4 +1,5 @@
 <x-layout>
+    <x-auth-session-status class="mb-4" :status="session('status')" />
     <!-- Chatting -->
     <div class="flex flex-row justify-between bg-white h-screen">
 
@@ -25,7 +26,7 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $community->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
+                          @livewire('last-message-community',[$community->id, 'community'])
                         </div>
                     </a>
                 @endforeach
@@ -39,7 +40,7 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
+                            @livewire('last-message-community',[$user->id, 'user'])
                         </div>
                     </a>
                 @endforeach

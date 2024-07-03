@@ -8,6 +8,7 @@ use App\Livewire\CommunityList;
 use App\Livewire\CommunCategory;
 use App\Livewire\CommunityCreate;
 use App\Livewire\CommunityProfile;
+use App\Livewire\CommunityCategory;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommunityController;
 
@@ -53,7 +54,7 @@ Route::view('profile', 'profile')
     })->name('profile');
 
     Route::get('/community/create', CommunityCreate::class);
-    //Route::get('/community/{community}', CommunityCategory::class);
+    Route::get('/community/{categoryId}', CommunityCategory::class)->name('communitypage');
 
     Route::get('chat/{user}', Chat::class)->name('chat');
 

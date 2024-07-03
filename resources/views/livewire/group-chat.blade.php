@@ -1,7 +1,7 @@
 <div id="main">
 
     <!-- Chatting -->
-    <div class="flex flex-row justify-between h-screen">
+    <div class="flex flex-row justify-between h-screen" >
 
         <!-- Chat List -->
         <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-500 opacity-90">
@@ -10,8 +10,6 @@
                 <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
             </div>
             <div class="border-b-2 border-gray-800 py-4 px-2">
-                <input type="text" placeholder="search chatting"
-                    class="py-2 px-2 border-2 border-gray-200 bg-gray-800 rounded-2xl w-full">
             </div>
 
             <!-- Dynamic User List from Chat.pdf -->
@@ -26,7 +24,18 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $community->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
+                            <span class="text-gray-800">
+                                @if (optional($community->latestGroupMessage()->first())->message)
+                                    @php
+                                    $latestGroupMessageWithUser = $community->latestGroupMessage()->with('fromUser')->first();
+                                    @endphp
+                                
+                                {{ optional($latestGroupMessageWithUser->fromUser)->name }}: {{ optional($community->latestGroupMessage()->first())->message }}    
+                                @else
+                                    No message available.
+                                @endif
+                                
+                            </span>
                         </div>
                     </a>
                 @endforeach
@@ -40,7 +49,18 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
+                            <span class="text-gray-800">
+                                {{-- @if (optional($user->latestGroupMessage()->first())->message)
+                                    @php
+                                        $latestGroupMessageWithUser = $user->latestGroupMessage()->with('fromUser')->first();
+                                    @endphp
+                                
+                                {{ optional($latestGroupMessageWithUser->fromUser)->name }}: {{ optional($user->latestGroupMessage()->first())->message }}    
+                                @else
+                                    No message available.
+                                @endif --}}
+                                
+                            </span>
                         </div>
                     </a>
                 @endforeach
@@ -51,7 +71,8 @@
         <div id="chatContainer" class="w-4/5 flex flex-col">
             <!-- Chat Header -->
             <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-600 border-b-2 border-gray-800 px-4 py-3 
-                                        fixed w-full z-10" onclick="showRightSide()">
+                                        fixed w-full z-10" 
+                                        onclick="showRightSide()">
                 <img class="rounded-full w-14 h-14 mt-2"
                 src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
                 alt="">                      
@@ -60,7 +81,9 @@
 
             <!-- Message Section -->
             <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
-                <div wire:poll.500ms>         
+                <div id="pollingid" 
+                wire:poll
+                >         
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">
@@ -83,22 +106,14 @@
                             <div class="chat-footer opacity-50 @if ($message->from_user_id == auth()->id()) @else mt-3 @endif">
                                 Delivered
                             </div>
-
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdown{{ $message->message }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
-                                <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
-                                   <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
-                                </svg>
-                            </button>
-                            <div id="dropdown{{ $message->message }}" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-40 @if ($message->from_user_id == auth()->id()) bg-blue-400 @else bg-gray-400 @endif">
-                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownMenuIconButton">
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
-                                   </li>
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
-                                   </li>
-                                </ul>
-                            </div>
+                            @if ($message->from_user_id == auth()->id())
+                                <button onclick="showDrop({{ $message->id }})"  id="dropdownMenuIconButton{{ $message->id }}"  data-dropdown-toggle="dropdown{{ $message->id }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                                    <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+                                    <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                    </svg>
+                                </button>
+                                @livewire('delete-message', ['message' => $message, 'commun' => $commun])
+                            @endif
                            
                         </div>
                     @endforeach 
@@ -140,15 +155,18 @@
             </div>
 
         </div>
-
         <!-- Right Item -->
         <div id="rightItem" class="hidden flex-col w-1/5 border-l-2 border-gray-800">
             <img class="object-cover rounded-full w-52 h-52 mx-auto mt-8"
-                src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
+                src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
                 alt="">
-
             <div class="text-center mt-4">
-                <h1 class="text-2xl font-semibold">{{ $user->name }}</h1>
+                <h1 class="text-2xl font-semibold text-white">{{ $commun->name }}</h1>
+
+                <p class="text-lg font-semibold text-white mt-5">Members:</p>  
+                @foreach ($members as $member)
+                    <p class="text-xl font-semibold text-white">{{ $member->user->name }}</p>    
+                @endforeach
         </div>
 
     </div>
@@ -160,7 +178,8 @@
         const chatHeader = document.getElementById('chatHeader');
         const chatInput = document.getElementById('chatInput');
         const rightItem = document.getElementById('rightItem');
-    
+        const wireElement = document.getElementById('pollingid');
+        
         if (rightItem.classList.contains('hidden')) {
             // Show the right-side chat list and adjust the chat container width
             rightItem.classList.remove('hidden');
@@ -171,6 +190,7 @@
             chatContainer.classList.add('w-3/5');
             chatInput.classList.remove('w-4/5');
             chatInput.classList.add('w-3/5');
+            wireElement.removeAttribute('wire:poll');
         } else {
             // Hide the right-side chat list and adjust the chat container width
             rightItem.classList.remove('flex');
@@ -181,6 +201,22 @@
             chatContainer.classList.add('w-4/5');
             chatInput.classList.remove('w-3/5');
             chatInput.classList.add('w-4/5');
+            wireElement.setAttribute('wire:poll');
         }
     }
+
+    function showDrop(messageId) {
+        const dropdown = document.getElementById(`dropdown${messageId}`);
+        const button = document.getElementById(`dropdownMenuIconButton${messageId}`);
+        const wireElement = document.getElementById('pollingid');
+        // Toggle dropdown visibility
+        if (dropdown.classList.contains('hidden')) {
+            dropdown.classList.remove('hidden');
+            wireElement.removeAttribute('wire:poll');
+        } else {
+            dropdown.classList.add('hidden');
+            wireElement.setAttribute('wire:poll');
+        }
+    }
+
 </script>

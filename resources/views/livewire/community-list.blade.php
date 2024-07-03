@@ -40,7 +40,7 @@ aria-label="Sidenav" id="drawer-navigation">
     </a>
 
     @foreach ($categories as $ctgrs )
-        <a href="{{ route('community', ['category' => $ctgrs->id]) }}"
+        <a href="{{ route('communitypage', $ctgrs) }}"
             class="mb-4 flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <svg class="w-6 h-6 text-gray-500" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,5 @@
 <x-layout>
+    <x-auth-session-status class="mb-4" :status="session('status')" />
         <div id="community" class="grid grid-cols-12 gap-4 mt-24">
     
             {{-- Sisi kiri --}}
