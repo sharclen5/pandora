@@ -18,14 +18,17 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Ghaza',
                 'email' => 'ghazaja2017@gmail.com',
+                'isAdmin' => '1',
             ],
             [
                 'name' => 'Nico',
                 'email' => 'nico@gmail.com',
+                'isAdmin' => '1',
             ],
             [
                 'name' => 'Mine',
                 'email' => 'jasmine@gmail.com',
+                'isAdmin' => '1',
             ],
         ]);
 

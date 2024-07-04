@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Members;
 use App\Models\Category;
 use App\Models\GroupMessage;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -30,7 +31,7 @@ class Community extends Model
 
     public function members()
     {
-        return $this->hasMany(Members::class, 'community_id');
+        return $this->belongsToMany(User::class, 'members', 'community_id', 'user_id');
     }
 
     public function category()

@@ -50,7 +50,7 @@
                                 </td>
                                 <td class="px-4 py-3 flex items-center justify-end">
                                     <button id="{{ $commun->name }}-button"
-                                        data-dropdown-toggle="{{ $commun->name }}-dropdown"
+                                        data-dropdown-toggle="commun{{ $commun->id }}-dropdown"
                                         class="inline-flex items-center text-sm font-medium hover:bg-blue-400 p-1.5 text-center hover:text-gray-800 rounded-lg focus:outline-none"
                                         type="button">
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -59,13 +59,13 @@
                                                 d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                         </svg>
                                     </button>
-                                    <div id="{{ $commun->name }}-dropdown"
+                                    <div id="commun{{ $commun->id }}-dropdown"
                                         class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
                                         <ul class="py-1 text-sm bg-blue-500"
-                                            aria-labelledby="{{ $commun->name }}-button">
+                                            aria-labelledby="{{ $commun->id }}-button">
                                             <li>
-                                                <button type="button" data-modal-target="update{{ $commun->name }}Modal"
-                                                    data-modal-toggle="update{{ $commun->name }}Modal"
+                                                <button type="button" data-modal-target="update{{ $commun->id }}Modal"
+                                                    data-modal-toggle="update{{ $commun->id }}Modal"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                                     <svg class="w-4 h-4 mr-2"
                                                         xmlns="http://www.w3.org/2000f/svg" viewbox="0 0 20 20"
@@ -79,8 +79,7 @@
                                                 </button>
                                             </li>
                                             <li>
-                                                <button type="button" data-modal-target="static-modal"
-                                                    data-modal-toggle="static-modal"
+                                                <button type="button" data-modal-target="detail-modal-{{ $commun->id }}" data-modal-toggle="detail-modal-{{ $commun->id }}"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                                     <svg class="w-4 h-4 mr-2"
                                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
@@ -93,8 +92,8 @@
                                                 </button>
                                             </li>
                                             <li>
-                                                <button type="button" data-modal-target="deleteModal"
-                                                    data-modal-toggle="deleteModal"
+                                                <button type="button" data-modal-target="delete{{ $commun->id }}Modal"
+                                                    data-modal-toggle="delete{{ $commun->id }}Modal"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 text-red-400 hover:text-red-600">
                                                     <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +109,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            
+                            @include('livewire.community-profile', ['id' => $commun->id])
+                            @livewire('update-community', ['id' => $commun->id])
+                            @livewire('delete-community', ['id' => $commun->id])
                             @endforeach
                         </tbody>
                     </table>
@@ -175,263 +176,6 @@
     </section>
     <!-- End block -->
     <!-- Update modal -->
-    <div id="updateCommunityModal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-2xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative p-4 bg-white rounded-lg shadow sm:p-5">
-                <!-- Modal header -->
-                <div class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5">
-                    <h3 class="text-lg font-semibold text-gray-900">Update Community</h3>
-                    <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                        data-modal-toggle="updateCommunityModal">
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
-                </div>
-                <!-- Modal body -->
-                <form class="p-4 md:p-5">
-                    <div class="grid gap-4 mb-4 grid-cols-2">
-    
-                        <div class="col-span-2">
-                            <label for="name"
-                                class="block mb-2 text-sm font-medium text-gray-900">Community
-                                Name</label>
-                            <input type="text" name="name" id="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                                placeholder="Type community name" required="">
-                        </div>
-    
-                        <label class="block mb-2 text-sm font-medium text-gray-900" for="user_avatar">Upload
-                            Image</label>
-                        <input
-                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
-                            aria-describedby="user_avatar_help" id="user_avatar" type="file">
-    
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="tagline"
-                                class="block mb-2 text-sm font-medium text-gray-900">Tagline</label>
-                            <input type="textr" name="tagline" id="tagline"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                                placeholder="Cool stuff" required="">
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <label for="category"
-                                class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-                            <select id="category"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
-                                <option selected="">Select category</option>
-                                <option value="TV">TV/Monitors</option>
-                                <option value="PC">PC</option>
-                                <option value="GA">Gaming/Console</option>
-                                <option value="PH">Phones</option>
-                            </select>
-                        </div>
-                        <div class="col-span-2">
-                            <label for="description"
-                                class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                            <textarea id="description" rows="1"
-                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Description"></textarea>
-                        </div>
-                        <div class="col-span-2">
-                            <label for="description"
-                                class="block mb-2 text-sm font-medium text-gray-900">Rules and
-                                Guidelines</label>
-                            <textarea id="description" rows="4"
-                                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="Rules and Guidelines"></textarea>
-                        </div>
-                    </div>
-                    <button type="submit"
-                        class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                        Update
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Read modal -->
-    <div id="static-modal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-7xl max-h-full">
-            <!-- Modal content -->
-            <div class="relative text-white bg-blue-500 rounded-lg shadow flex">
-    
-                <!-- Left part -->
-                <div class="w-1/4 bg-blue-400">
-                    <img src="{{ asset('cdetail.png') }}" alt="Image Description"
-                        class="w-full h-auto object-cover mb-4">
-                    <h1 class="text-4xl mb-3 text-center">Tech Inovator</h1>
-                    <hr class="w-4/5 mx-auto mb-2">
-    
-                    <div class="text-lg mb-1 ml-16">
-    
-                        <div class="flex items-center">
-                            <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z"
-                                    clip-rule="evenodd" />
-                            </svg> 11.135 Members
-                        </div>
-    
-                        <div class="flex items-center">
-                            <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z"
-                                    clip-rule="evenodd" />
-                            </svg> Top #1 Community
-                        </div>
-    
-                        <div class="flex items-center">
-                            <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="currentColor" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd"
-                                    d="M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4Zm0 8v6h7v-6H4Zm16 6h-7v-6h7v6Z"
-                                    clip-rule="evenodd" />
-                            </svg> Hobby, Entertainment
-                        </div>
-    
-                        <div class="flex items-center">
-                            <svg class="mr-2 w-8 h-8 text-gray-800" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z" />
-                            </svg> Since 2020
-                        </div>
-    
-                    </div>
-    
-    
-                </div>
-    
-    
-                <!-- Right part -->
-                <div class="w-3/4">
-    
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-                        <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                            data-modal-hide="static-modal">
-                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-    
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-2">
-    
-                        <h1 class="text-3xl">Tagline</h1>
-                        <p class="text-base leading-relaxed text-white">
-                            “Innovate, Collaborate, Elevate”
-                        </p>
-    
-                        <h1 class="text-3xl mt-8">Description</h1>
-                        <p class="text-base leading-relaxed text-white">
-                            Tech Innovators is a vibrant community where tech enthusiasts from diverse
-                            backgrounds come
-                            together to share knowledge, collaborate on innovative projects, and explore the
-                            latest
-                            advancements in technology. Our mission is to foster a forward-thinking environment
-                            that
-                            inspires creativity, drives technological progress, and builds a network of
-                            like-minded
-                            individuals passionate about the future of technology.
-                        </p>
-    
-                        <h1 class="text-3xl">Rules and Guidelines</h1>
-                        <p class="text-base leading-relaxed text-white">
-    
-                        <ol class="space-y-4 list-decimal list-inside">
-                            <li>
-                                List item one
-                                <ul class="ps-5 mt-2 space-y-1 list-disc list-inside">
-                                    <li>You might feel like you are being really "organized" o</li>
-                                    <li>Nested navigation in UIs is a bad idea too, keep things as flat as
-                                        possible.
-                                    </li>
-                                    <li>Nesting tons of folders in your source code is also not helpful.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                List item two
-                                <ul class="ps-5 mt-2 space-y-1 list-disc list-inside">
-                                    <li>I'm not sure if we'll bother styling more than two levels deep.</li>
-                                    <li>Two is already too much, three is guaranteed to be a bad idea.</li>
-                                    <li>If you nest four levels deep you belong in prison.</li>
-                                </ul>
-                            </li>
-                            <li>
-                                List item three
-                                <ul class="ps-5 mt-2 space-y-1 list-disc list-inside">
-                                    <li>Again please don't nest lists if you want</li>
-                                    <li>Nobody wants to look at this.</li>
-                                    <li>I'm upset that we even have to bother styling this.</li>
-                                </ul>
-                            </li>
-                        </ol>
-    
-                        </p>
-    
-                    </div>
-    
-                </div>
-    
-            </div>
-        </div>
-    </div>
     <!-- Delete modal -->
-    <div id="deleteModal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-md max-h-full">
-            <!-- Modal content -->
-            <div class="relative p-4 text-center bg-white rounded-lg shadow sm:p-5">
-                <button type="button"
-                    class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                    data-modal-toggle="deleteModal">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
-                <svg class="text-gray-400 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true" fill="currentColor"
-                    viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                        clip-rule="evenodd" />
-                </svg>
-                <p class="mb-4 text-gray-500">Are you sure you want to delete this item?
-                </p>
-                <div class="flex justify-center items-center space-x-4">
-                    <button data-modal-toggle="deleteModal" type="button"
-                        class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10">No,
-                        cancel</button>
-                    <button type="submit"
-                        class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300">Yes,
-                        I'm sure</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>

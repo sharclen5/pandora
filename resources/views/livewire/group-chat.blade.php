@@ -50,16 +50,6 @@
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
                             <span class="text-gray-800">
-                                {{-- @if (optional($user->latestGroupMessage()->first())->message)
-                                    @php
-                                        $latestGroupMessageWithUser = $user->latestGroupMessage()->with('fromUser')->first();
-                                    @endphp
-                                
-                                {{ optional($latestGroupMessageWithUser->fromUser)->name }}: {{ optional($user->latestGroupMessage()->first())->message }}    
-                                @else
-                                    No message available.
-                                @endif --}}
-                                
                             </span>
                         </div>
                     </a>
