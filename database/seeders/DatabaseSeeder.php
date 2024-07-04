@@ -18,16 +18,19 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Ghaza',
                 'email' => 'ghazaja2017@gmail.com',
+                'password' => bcrypt('********'),
                 'isAdmin' => '1',
             ],
             [
                 'name' => 'Nico',
                 'email' => 'nico@gmail.com',
+                'password' => bcrypt('********'),
                 'isAdmin' => '1',
             ],
             [
                 'name' => 'Mine',
                 'email' => 'jasmine@gmail.com',
+                'password' => bcrypt('********'),
                 'isAdmin' => '1',
             ],
         ]);

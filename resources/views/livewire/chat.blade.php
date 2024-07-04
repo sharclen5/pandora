@@ -51,7 +51,6 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            <span class="text-gray-800">Last message preview...</span>
                         </div>
                     </a>
                 @endforeach
