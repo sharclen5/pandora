@@ -58,7 +58,7 @@
         </div>
 
         <!-- Chat Container -->
-        <div id="chatContainer" class="w-4/5 flex flex-col">
+        <div id="chatContainer" class="w-4/5 flex flex-col bg-gray-800">
             <!-- Chat Header -->
             <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-600 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" onclick="showRightSide()">
@@ -69,7 +69,7 @@
             </div>
 
             <!-- Message Section -->
-            <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-hidden transition-all bg-gray-800">
+            <div id="chatBox" class="w-full mt-6 py-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
                 <div wire:poll.500ms>         
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
@@ -115,7 +115,7 @@
             </div>
             
             <!-- Chat Input -->
-            <div id="chatInput" class="bg-gray-600 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
+            <div id="chatInput" class="bg-gray-600 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5">
                 <form action="" wire:submit.prevent="sendMessage" class="flex">
 
 

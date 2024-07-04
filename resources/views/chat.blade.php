@@ -1,7 +1,7 @@
 <x-layout>
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <!-- Chatting -->
-    <div class="flex flex-row justify-between bg-white h-screen">
+    <div class="flex flex-row justify-between h-screen">
 
         <!-- Chat List -->
         <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-500 opacity-90">
@@ -26,7 +26,18 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $community->name }}</div>
-                          @livewire('last-message-community',[$community->id, 'community'])
+                            <span class="text-gray-800"><span class="text-gray-800">
+                                @if (optional($community->latestGroupMessage()->first())->message)
+                                    @php
+                                    $latestGroupMessageWithUser = $community->latestGroupMessage()->with('fromUser')->first();
+                                    @endphp
+                                
+                                {{ optional($latestGroupMessageWithUser->fromUser)->name }}: {{ optional($community->latestGroupMessage()->first())->message }}    
+                                @else
+                                    No message available.
+                                @endif
+                                
+                            </span></span>
                         </div>
                     </a>
                 @endforeach
@@ -40,7 +51,6 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            @livewire('last-message-community',[$user->id, 'user'])
                         </div>
                     </a>
                 @endforeach
@@ -49,7 +59,7 @@
 
 
         <!-- Message Section -->
-        <div class="w-full flex justify-center items-center text-center bg-gray-700"> 
+        <div class="w-4/5 flex justify-center items-center text-center bg-gray-700"> 
           Begin your chat with someone!!
         </div>
     </div>

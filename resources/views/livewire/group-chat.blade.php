@@ -10,6 +10,8 @@
                 <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
             </div>
             <div class="border-b-2 border-gray-800 py-4 px-2">
+                <input type="text" placeholder="search chatting"
+                    class="py-2 px-2 border-2 border-gray-200 bg-gray-800 rounded-2xl w-full">
             </div>
 
             <!-- Dynamic User List from Chat.pdf -->
@@ -24,7 +26,7 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $community->name }}</div>
-                            <span class="text-gray-800">
+                            <span class="text-gray-800"><span class="text-gray-800">
                                 @if (optional($community->latestGroupMessage()->first())->message)
                                     @php
                                     $latestGroupMessageWithUser = $community->latestGroupMessage()->with('fromUser')->first();
@@ -35,7 +37,7 @@
                                     No message available.
                                 @endif
                                 
-                            </span>
+                            </span></span>
                         </div>
                     </a>
                 @endforeach
@@ -49,8 +51,6 @@
                         </div>
                         <div class="w-full">
                             <div class="text-lg font-semibold">{{ $user->name }}</div>
-                            <span class="text-gray-800">
-                            </span>
                         </div>
                     </a>
                 @endforeach
@@ -58,7 +58,7 @@
         </div>
 
         <!-- Chat Container -->
-        <div id="chatContainer" class="w-4/5 flex flex-col">
+        <div id="chatContainer" class="w-4/5 flex flex-col bg-gray-800">
             <!-- Chat Header -->
             <div id="chatHeader" class="hover:cursor-pointer flex bg-gray-600 border-b-2 border-gray-800 px-4 py-3 
                                         fixed w-full z-10" 
@@ -70,7 +70,7 @@
             </div>
 
             <!-- Message Section -->
-            <div id="chatBox" class="w-full mt-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
+            <div id="chatBox" class="w-full mt-6 py-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
                 <div id="pollingid" 
                 wire:poll
                 >         
@@ -113,7 +113,7 @@
             </div>
             
             <!-- Chat Input -->
-            <div id="chatInput" class="bg-gray-600 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5 z-10">
+            <div id="chatInput" class="bg-gray-600 form-control p-4 border-t-2 border-gray-800 fixed bottom-0 w-4/5">
                 <form action="" wire:submit.prevent="sendMessage" class="flex">
 
 
