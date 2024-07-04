@@ -42,3 +42,16 @@ function showUsers() {
     document.getElementById('usersLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 
+function showallCommunity() {
+    document.getElementById('profile').style.display = 'none';
+    document.getElementById('community').style.display = 'none';
+    document.getElementById('security').style.display = 'none';
+    document.getElementById('users').style.display = 'none';
+    document.getElementById('allcommunity').style.display = 'block';
+    document.getElementById('profileLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('usersLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('allcommunityLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
+}
+

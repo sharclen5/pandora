@@ -146,17 +146,21 @@
 
         </div>
         <!-- Right Item -->
-        <div id="rightItem" class="hidden flex-col w-1/5 border-l-2 border-gray-800">
+        <div id="rightItem" class="hidden flex-col w-1/5 border-l-2 border-gray-800 bg-gray-500">
             <img class="object-cover rounded-full w-52 h-52 mx-auto mt-8"
-                src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
-                alt="">
+            src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
+            alt="">
             <div class="text-center mt-4">
-                <h1 class="text-2xl font-semibold text-white">{{ $commun->name }}</h1>
+            <h1 class="text-2xl font-semibold text-white">{{ $commun->name }}</h1>
 
-                <p class="text-lg font-semibold text-white mt-5">Members:</p>  
-                @foreach ($members as $member)
-                    <p class="text-xl font-semibold text-white">{{ $member->user->name }}</p>    
-                @endforeach
+            <p class="text-lg font-semibold text-white mt-5">Members:</p>  
+            @foreach ($members as $member)
+                <div class="flex items-center justify-between mb-2">
+                <p class="text-xl font-semibold text-white ml-5">{{ $member->user->name }}</p>
+                <button class="text-white bg-blue-500 px-4 py-2 rounded-lg mr-5">Add</button>
+                </div>
+            @endforeach
+            </div>
         </div>
 
     </div>
