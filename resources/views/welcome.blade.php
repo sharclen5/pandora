@@ -80,7 +80,7 @@
 
     </div>
 
-    <div id="faq" class="mt-20 flex inset-x-0 flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div id="faq" class="mt-20 mb-48 flex inset-x-0 flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <h1 class="mt-4 mb-20 text-3xl sm:text-4xl md:text-5xl font-semibold bg-clip-text text-white">FAQ</h1>
         <div id="target" class="flex inset-x-0 flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
 
@@ -101,7 +101,7 @@
                 </svg>
             </button>
             <div id="dropdownText2" class="mt-2 w-2/3 text-white text-xl text-justify opacity-0 transition-opacity duration-500 invisible">
-                Pandora is a web-based community information system and instant messaging service that helps users discover and join communities, interact in real-time, and stay updated on events and activities. Pandora aims to create a vibrant online ecosystem where users can connect with like-minded individuals, explore new interests, and actively engage in meaningful interactions within their communities.
+                To join a community on Pandora, you first need to create an account. Once you have an account, log in and navigate to the community page. Browse through the available communities and choose one that aligns with your interests. Simply click the "Join" button for the community you have chosen, and you can start chatting with other members on the chat page.
             </div>
 
             <button id="dropdownbutton3" class="w-2/3 text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center flex justify-between items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -111,7 +111,7 @@
                 </svg>
             </button>
             <div id="dropdownText3" class="mt-2 w-2/3 text-white text-xl text-justify opacity-0 transition-opacity duration-500 invisible">
-                Pandora is a web-based community information system and instant messaging service that helps users discover and join communities, interact in real-time, and stay updated on events and activities. Pandora aims to create a vibrant online ecosystem where users can connect with like-minded individuals, explore new interests, and actively engage in meaningful interactions within their communities.
+                No, Pandora is a completely free-to-use website. We believe in creating an accessible platform where users can join or create communities, connect with others who share their interests, and enjoy meaningful conversations without any financial barriers. There are no hidden fees or subscription costs involved. Simply sign up, join your desired communities, and start chatting freely.
             </div>
 
             <button id="dropdownbutton4" class="w-2/3 text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center flex justify-between items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -121,24 +121,11 @@
                 </svg>
             </button>
             <div id="dropdownText4" class="mt-2 w-2/3 text-white text-xl text-justify opacity-0 transition-opacity duration-500 invisible">
-                Pandora is a web-based community information system and instant messaging service that helps users discover and join communities, interact in real-time, and stay updated on events and activities. Pandora aims to create a vibrant online ecosystem where users can connect with like-minded individuals, explore new interests, and actively engage in meaningful interactions within their communities.
-            </div>
-
-            <button id="dropdownbutton5" class="w-2/3 text-white bg-blue-500 hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 text-center flex justify-between items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-                What features does Pandora offer for communication ?
-                <svg id="arrow5" class="w-5 h-5 ms-3 ml-auto transform transition-transform duration-500" id="arrow" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                </svg>
-            </button>
-            <div id="dropdownText5" class="mt-2 w-2/3 text-white text-xl text-justify opacity-0 transition-opacity duration-500 invisible">
-                Pandora is a web-based community information system and instant messaging service that helps users discover and join communities, interact in real-time, and stay updated on events and activities. Pandora aims to create a vibrant online ecosystem where users can connect with like-minded individuals, explore new interests, and actively engage in meaningful interactions within their communities.
+                Creating your own community on Pandora is easy. Simply log in to your account and navigate to the community page. Click the "Create" button and fill in the required information for your community. Once you’ve completed these steps, your community will be set up and ready for others to join.
             </div>
             
 
         </div>
-
-
-        <p class="mb-48"></p>
 
     </div>
 
