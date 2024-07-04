@@ -25,7 +25,11 @@
                     <a href="#" id="usersLink" onclick="showUsers()"
                         class="flex items-center px-3 py-2.5 font-semibold hover:border hover:rounded-full">
                         Users
-                    </a>    
+                    </a>
+                    <a href="#" id="allcommunityLink" onclick="showallCommunity()"
+                    class="flex items-center px-3 py-2.5 font-semibold hover:border hover:rounded-full">
+                    All Community
+                </a>
                 @endif
                 
 
@@ -108,6 +112,12 @@
             </div>
         </div>
         @livewire('manage-users');
+
+        <div id="allcommunity" class="hidden justify-center items-center w-full h-full mt-8">
+
+            <!-- Start block -->
+            @livewire('profile-allcommunity')
+        </div>
 
 
 
