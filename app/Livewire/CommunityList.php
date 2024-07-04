@@ -22,7 +22,7 @@ class CommunityList extends Component
 
     public function render()
     {
-        $communities = Community::paginate(5);
+        $communities = Community::paginate(8);
         $categories = Category::all();
 
         return view('livewire.community-list', [
