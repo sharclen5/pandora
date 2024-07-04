@@ -29,4 +29,6 @@
     
         @livewire('community-list')
 
+        
+
 </x-layout>
