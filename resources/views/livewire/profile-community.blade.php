@@ -1,4 +1,4 @@
-<div id="allcommunity" class="hidden justify-center items-center w-full h-full mt-8">
+<div >
     <section>
         <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
             <!-- Start coding here -->

@@ -112,9 +112,12 @@
             </div>
         </div>
         @livewire('manage-users');
+
+        <div id="allcommunity" class="hidden justify-center items-center w-full h-full mt-8">
+
             <!-- Start block -->
             @livewire('profile-allcommunity')
-        
+        </div>
 
 
 
