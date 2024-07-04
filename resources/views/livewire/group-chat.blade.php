@@ -4,7 +4,7 @@
     <div class="flex flex-row justify-between h-screen" >
 
         <!-- Chat List -->
-        <div class="flex flex-col w-1/5 border-r-2 border-gray-800 bg-gray-500 opacity-90">
+        <div class="flex flex-col w-1/5 h- border-r-2 border-gray-800 bg-gray-500 opacity-90">
             <!-- Search Component -->
             <div class="px-2">
                 <h1 class="text-gray-800 text-2xl mt-6 ml-2">Messages</h1>
@@ -14,12 +14,12 @@
                     class="py-2 px-2 border-2 border-gray-200 bg-gray-800 rounded-2xl w-full">
             </div>
 
-            <!-- Dynamic User List from Chat.pdf -->
-            <div class="flex flex-col w-full overflow-y-auto">
+            <!-- Dynamic User List -->
+            <div id="chatList" class="flex flex-col w-full h-screen overflow-y-auto">
                 @foreach ($communities as $community)
                     <a href="{{ route('groupchat', $community) }}"
                         class="flex flex-row py-4 px-2 justify-center items-center border-b-2 text-white hover:text-black border-gray-800 hover:bg-gray-100">
-                        <div class="w-1/5">
+                        <div class="w-1/5 mr-3">
                             <img class="object-cover h-12 w-12 rounded-full"
                                 src="{{ $community->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $community->img) }}"
                                 alt="">
@@ -44,7 +44,7 @@
                 @foreach ($users as $user)
                     <a href="{{ route('chat', $user) }}"
                         class="flex flex-row py-4 px-2 justify-center items-center border-b-2 text-white hover:text-black border-gray-800 hover:bg-gray-100">
-                        <div class="w-1/5">
+                        <div class="w-1/5 mr-3">
                             <img class="object-cover h-12 w-12 rounded-full"
                                 src="{{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}"
                                 alt="">
@@ -66,7 +66,7 @@
                 <img class="rounded-full w-14 h-14 mt-2"
                 src="{{ $commun->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $commun->img) }}"
                 alt="">                      
-                <h2 class="text-gray-800 text-lg font-semibold ml-3 mt-5">{{ $commun->name }}</h2>
+                <h2 class="text-white text-lg font-semibold ml-3 mt-6">{{ $commun->name }}</h2>
             </div>
 
             <!-- Message Section -->
