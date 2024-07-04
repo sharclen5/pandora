@@ -113,7 +113,7 @@ aria-label="Sidenav" id="drawer-navigation">
                 {{ $commun->tagline }}
             </p>
             <p class="mb-3 font-normal text-gray-700">
-                {{ $commun->user->name }}
+               Created by {{ $commun->user->name }}
             </p>
         </div>
     </div>

@@ -176,7 +176,7 @@
             </div>
 
             <div class="flex-1">
-                <img src="{{ asset('sui.jpg') }}" alt="" class="w-3/5 mt-2 ml-28">
+                <img src="{{ asset('us.png') }}" alt="" class="w-3/5 mt-2 ml-28">
             </div>
 
         </div>
