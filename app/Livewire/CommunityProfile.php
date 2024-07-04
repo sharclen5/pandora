@@ -14,7 +14,6 @@ class CommunityProfile extends Component
     public function mount(Community $community)
     {
         $this->community = Community::with('categories')->get();
-
     }
 
     public function render()
