@@ -33,7 +33,7 @@ class Community extends Model
     {
         return $this->belongsToMany(User::class, 'members', 'community_id', 'user_id');
     }
-
+            
     public function category()
     {
         return $this->belongsToMany(Category::class, 'community_categories');
