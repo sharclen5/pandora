@@ -7,6 +7,7 @@ use Livewire\Component;
 use App\Models\Community;
 use App\Models\GroupMessage;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class GroupChat extends Component
 {   
