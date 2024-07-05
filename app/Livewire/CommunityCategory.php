@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Community;
+use Illuminate\Support\Facades\Auth;
 
 class CommunityCategory extends Component
 {
