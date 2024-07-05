@@ -27,12 +27,25 @@ class GroupChat extends Component
 
     public function render()
     {
-        $users = User::where('id', '!=', auth()->id())->get();
+        $users = User::where('id', '!=', auth()->id())
+        ->whereIn('id', function ($query) {
+            $query->select('user_id')
+                ->from('members')
+                ->whereIn('community_id', function ($subQuery) {
+                    $subQuery->select('community_id')
+                        ->from('members')
+                        ->where('user_id', auth()->id());
+                });
+        })
+        ->get();
         $community = Community::where('id', '=', $this->community)->first();
         $this->communities = Community::whereHas('members', function ($query) {
             $query->where('user_id', auth()->id());
         })->get();
-        $members = Members::with('user')->where('community_id', $this->commun->id)->get(); 
+        $members = Members::with('user')
+            ->where('community_id', $this->commun->id)
+            ->where('user_id', '!=', auth()->id())
+            ->get(); 
         return view('livewire.group-chat', [
             'users' => $users,
             'communities' => $this->communities,

@@ -157,7 +157,7 @@
             @foreach ($members as $member)
                 <div class="flex items-center justify-between mb-2">
                 <p class="text-xl font-semibold text-white ml-5">{{ $member->user->name }}</p>
-                <button class="text-white bg-blue-500 px-4 py-2 rounded-lg mr-5">Add</button>
+                <a href="{{ route('chat', $member->user) }}" class="text-white bg-blue-500 px-4 py-2 rounded-lg mr-5">chat</a>
                 </div>
             @endforeach
             </div>

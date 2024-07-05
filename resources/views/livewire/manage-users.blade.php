@@ -45,11 +45,7 @@
                                 <tr class="border-b">
                                     <td class="px-4 py-3">
                                         <img class="rounded-t-lg" src="
-                                            @if ($user->img == 'default.jpg') 
-                                            https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
-                                            @else
-                                                {{ asset('storage/' . $user->img) }} 
-                                            @endif
+                                        {{ $user->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . $user->img) }}
                                         " alt="" style="width: 50px; height: 50px;" />
                                     </td>
                                     <td class="px-4 py-3">{{ $user->name }}</td>
