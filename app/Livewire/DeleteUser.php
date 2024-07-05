@@ -19,7 +19,6 @@ class DeleteUser extends Component
         GroupMessage::where('from_user_id', $this->user->id)->delete();
         $this->user->delete();
         tap($this->user, $logout(...))->delete();
-        $this->dispatch('userDeleted');
         return redirect()->route('profile');
     }
 
