@@ -11,6 +11,7 @@ class CommunityCategory extends Component
 {
     public $communities;
     public $categoryId;
+    public $search='';
 
     public function mount($categoryId)
     {
@@ -24,7 +25,7 @@ class CommunityCategory extends Component
     public function render()
     {
         $communities = Community::whereHas('category', function ($query) {
-            $query->where('community_id', $this->categoryId);
+            $query->whereIn('category_id', [$this->categoryId]);
         })->paginate(8);
         $categories = Category::all();
         return view('livewire.community-category',[

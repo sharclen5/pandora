@@ -15,7 +15,6 @@
                                 <th scope="col" class="px-4 py-4">Picture</th>
                                 <th scope="col" class="px-4 py-3">Name</th>
                                 <th scope="col" class="px-4 py-3">Email</th>
-                                <th scope="col" class="px-4 py-3">Interest</th>
                                 <th scope="col" class="px-4 py-3">
                                     <span class="sr-only">Actions</span>
                                 </th>
@@ -31,7 +30,6 @@
                                     </td>
                                     <td class="px-4 py-3">{{ $user->name }}</td>
                                     <td class="px-4 py-3">{{ $user->email }}</td>
-                                    <td class="px-4 py-3 max-w-[12rem] truncate">Music, Game</td>
                                     <td class="px-4 py-3 flex items-center justify-center">
                                         <button type="button" data-modal-target="users{{ $user->id }}deleteModal"
                                             data-modal-toggle="users{{ $user->id }}deleteModal"
