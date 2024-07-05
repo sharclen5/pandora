@@ -34,7 +34,17 @@ Route::view('profile', 'profile')
     
     Route::get('/chat', function () {
         return view('chat', [
-            'users' => User::where('id', '!=', auth()->id())->get(),
+            'users' => User::where('id', '!=', auth()->id())
+                ->whereIn('id', function ($query) {
+                    $query->select('user_id')
+                        ->from('members')
+                        ->whereIn('community_id', function ($subQuery) {
+                            $subQuery->select('community_id')
+                                ->from('members')
+                                ->where('user_id', auth()->id());
+                        });
+                })
+                ->get(),
             'communities' => Community::whereHas('members', function ($query) {
                 $query->where('user_id', auth()->id());
             })->get(),

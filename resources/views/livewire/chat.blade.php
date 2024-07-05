@@ -152,7 +152,7 @@
                 alt="">
 
             <div class="text-center mt-4">
-                <h1 class="text-2xl font-semibold">{{ $user->name }}</h1>
+                <h1 class="text-2xl font-semibold">{{ $to_user->name }}</h1>
         </div>
 
     </div>
