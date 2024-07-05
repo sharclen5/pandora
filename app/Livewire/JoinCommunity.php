@@ -33,7 +33,7 @@ class JoinCommunity extends Component
            ]);
         }
         
-
+        return redirect()->route('groupchat', $this->communityId);
         session()->flash('message', 'You have joined the community!');
     }
 
