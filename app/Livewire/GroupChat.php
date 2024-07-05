@@ -21,6 +21,10 @@ class GroupChat extends Component
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+
+        if (!Members::where('community_id', $communityId)->where('user_id', auth()->id())->exists()) {
+            return redirect()->route('chat');
+        }
         $this->commun = Community::find($communityId);
         $this->user = auth()->user();
     }
