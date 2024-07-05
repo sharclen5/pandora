@@ -111,7 +111,7 @@
                 </div>
             </div>
         </div>
-        @livewire('manage-users');
+        @livewire('manage-users')
 
         <div id="allcommunity" class="hidden justify-center items-center w-full h-full mt-8">
 

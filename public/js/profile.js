@@ -7,6 +7,7 @@ function showProfile() {
     document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('usersLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('allcommunityLink').classList.remove('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 
 function showCommunity() {
@@ -18,6 +19,7 @@ function showCommunity() {
     document.getElementById('communityLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('usersLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('allcommunityLink').classList.remove('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 
 function showSecurity() {
@@ -29,6 +31,7 @@ function showSecurity() {
     document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.add('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('usersLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('allcommunityLink').classList.remove('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 
 function showUsers() {
@@ -40,6 +43,7 @@ function showUsers() {
     document.getElementById('communityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('securityLink').classList.remove('bg-blue-700', 'border', 'rounded-full');
     document.getElementById('usersLink').classList.add('flex', 'bg-blue-700', 'border', 'rounded-full');
+    document.getElementById('allcommunityLink').classList.remove('flex', 'bg-blue-700', 'border', 'rounded-full');
 }
 
 function showallCommunity() {
