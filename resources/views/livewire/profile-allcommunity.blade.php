@@ -49,8 +49,8 @@
                                     {{ $commun->members->count() }}
                                 </td>
                                 <td class="px-4 py-3 flex items-center justify-end">
-                                    <button id="{{ $commun->name }}-button"
-                                        data-dropdown-toggle="commun{{ $commun->id }}-dropdown"
+                                    <button id="{{ $commun->id }}all-button"
+                                        data-dropdown-toggle="commun{{ $commun->id }}all-dropdown"
                                         class="inline-flex items-center text-sm font-medium hover:bg-blue-400 p-1.5 text-center hover:text-gray-800 rounded-lg focus:outline-none"
                                         type="button">
                                         <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -59,13 +59,13 @@
                                                 d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                         </svg>
                                     </button>
-                                    <div id="commun{{ $commun->id }}-dropdown"
+                                    <div id="commun{{ $commun->id }}all-dropdown"
                                         class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow">
                                         <ul class="py-1 text-sm bg-blue-500"
-                                            aria-labelledby="{{ $commun->id }}-button">
+                                            aria-labelledby="{{ $commun->id }}all-button">
                                             <li>
-                                                <button type="button" data-modal-target="update{{ $commun->id }}Modal"
-                                                    data-modal-toggle="update{{ $commun->id }}Modal"
+                                                <button type="button" data-modal-target="update{{ $commun->id }}allModal"
+                                                    data-modal-toggle="update{{ $commun->id }}allModal"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                                     <svg class="w-4 h-4 mr-2"
                                                         xmlns="http://www.w3.org/2000f/svg" viewbox="0 0 20 20"
@@ -79,7 +79,7 @@
                                                 </button>
                                             </li>
                                             <li>
-                                                <button type="button" data-modal-target="detail-modal-{{ $commun->id }}" data-modal-toggle="detail-modal-{{ $commun->id }}"
+                                                <button type="button" data-modal-target="detail-modal-{{ $commun->id }}all" data-modal-toggle="detail-modal-{{ $commun->id }}all"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 hover:text-gray-800">
                                                     <svg class="w-4 h-4 mr-2"
                                                         xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"
@@ -92,8 +92,8 @@
                                                 </button>
                                             </li>
                                             <li>
-                                                <button type="button" data-modal-target="delete{{ $commun->id }}Modal"
-                                                    data-modal-toggle="delete{{ $commun->id }}Modal"
+                                                <button type="button" data-modal-target="delete{{ $commun->id }}allModal"
+                                                    data-modal-toggle="delete{{ $commun->id }}allModal"
                                                     class="flex w-full items-center py-2 px-4 hover:bg-blue-400 text-red-400 hover:text-red-600">
                                                     <svg class="w-4 h-4 mr-2" viewbox="0 0 14 15"
                                                         fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -109,9 +109,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            @include('livewire.community-profile', ['id' => $commun->id])
-                            @livewire('update-community', ['id' => $commun->id])
-                            @livewire('delete-community', ['id' => $commun->id])
+                            @include('livewire.all-community-profile', ['id' => $commun->id])
+                            @livewire('update-all-community', ['id' => $commun->id])
+                            @livewire('delete-all-community', ['id' => $commun->id])
                             @endforeach
                         </tbody>
                     </table>

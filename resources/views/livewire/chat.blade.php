@@ -70,7 +70,8 @@
 
             <!-- Message Section -->
             <div id="chatBox" class="w-full mt-6 py-24 px-3 flex-1 overflow-y-auto transition-all bg-gray-800">
-                <div wire:poll.500ms>         
+                <div id="pollingid" 
+                wire:poll>         
                     @foreach ($messages as $message)
                         <div class="chat @if ($message->from_user_id == auth()->id()) chat-end @else chat-start @endif">
                             <div class="chat-image avatar">
@@ -94,18 +95,14 @@
                                 Delivered
                             </div>
 
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdown{{ $message->id }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                            @if ($message->from_user_id == auth()->id())
+                            <button onclick="showDrop({{ $message->id }})"  id="dropdownMenuIconButton{{ $message->id }}"  data-dropdown-toggle="dropdown{{ $message->id }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
                                 <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
-                                   <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
                                 </svg>
                             </button>
-                            <div id="dropdown{{ $message->id }}" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-40 @if ($message->from_user_id == auth()->id()) bg-blue-400 @else bg-gray-400 @endif">
-                                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownMenuIconButton">
-                                   <li>
-                                      <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
-                                   </li>
-                                </ul>
-                            </div>
+                            @livewire('delete-chat-message', ['message' => $message, 'user' => $to_user])
+                        @endif
                            
                         </div>
                     @endforeach
@@ -167,6 +164,7 @@
         const chatHeader = document.getElementById('chatHeader');
         const chatInput = document.getElementById('chatInput');
         const rightItem = document.getElementById('rightItem');
+        const wireElement = document.getElementById('pollingid');
     
         if (rightItem.classList.contains('hidden')) {
             // Show the right-side chat list and adjust the chat container width
@@ -178,6 +176,7 @@
             chatContainer.classList.add('w-3/5');
             chatInput.classList.remove('w-4/5');
             chatInput.classList.add('w-3/5');
+            wireElement.removeAttribute('wire:poll');
         } else {
             // Hide the right-side chat list and adjust the chat container width
             rightItem.classList.remove('flex');
@@ -188,6 +187,19 @@
             chatContainer.classList.add('w-4/5');
             chatInput.classList.remove('w-3/5');
             chatInput.classList.add('w-4/5');
+        }
+    }
+
+    function showDrop(messageId) {
+        const dropdown = document.getElementById(`dropdown${messageId}`);
+        const button = document.getElementById(`dropdownMenuIconButton${messageId}`);
+        const wireElement = document.getElementById('pollingid');
+        // Toggle dropdown visibility
+        if (dropdown.classList.contains('hidden')) {
+            dropdown.classList.remove('hidden');
+            wireElement.removeAttribute('wire:poll');
+        } else {
+            dropdown.classList.add('hidden');
         }
     }
 </script>

@@ -36,12 +36,14 @@
                 </div>
 
                 <!-- Chat Header -->
-                <div class="msg-head" onclick="togglePolling()">
+                <div class="msg-head">
                     <!-- Chat header content -->
                 </div>
 
                 <div class="modal-body">
-                    <div id="chatBox" class="msg-body" wire:poll.500ms>
+                    <div class="msg-body" 
+                    id="pollingid" 
+                    wire:poll>
                         <ul>
                             @foreach ($messages as $message)
                                 @if ($message['sender'] == auth()->user()->name)
@@ -54,6 +56,15 @@
                                         <p> {{ $message['message'] }} </p>
                                         <span class="time">10:06 am</span>
                                     </li>
+                                @endif
+                                
+                                @if ($message->from_user_id == auth()->id())
+                                <button onclick="showDrop({{ $message->id }})"  id="dropdownMenuIconButton{{ $message->id }}"  data-dropdown-toggle="dropdown{{ $message->id }}" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center bg-transparent rounded-lg hover:bg-gray-600" type="button">
+                                    <svg class="w-4 h-4 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+                                    <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                    </svg>
+                                </button>
+                                @livewire('delete-message', ['message' => $message, 'commun' => $commun])
                                 @endif
                             @endforeach
                         </ul>
@@ -95,15 +106,4 @@
 </div>
 
 <script>
-    let isPollingActive = true;
-
-    function togglePolling() {
-        isPollingActive = !isPollingActive;
-        const chatBox = document.getElementById('chatBox');
-        if (isPollingActive) {
-            chatBox.setAttribute('wire:poll', '500ms');
-        } else {
-            chatBox.removeAttribute('wire:poll');
-        }
-    }
 </script>

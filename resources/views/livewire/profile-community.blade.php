@@ -49,7 +49,7 @@
                                     {{ $commun->members->count() }}
                                 </td>
                                 <td class="px-4 py-3 flex items-center justify-end">
-                                    <button id="{{ $commun->name }}-button"
+                                    <button id="{{ $commun->id }}-button"
                                         data-dropdown-toggle="commun{{ $commun->id }}-dropdown"
                                         class="inline-flex items-center text-sm font-medium hover:bg-blue-400 p-1.5 text-center hover:text-gray-800 rounded-lg focus:outline-none"
                                         type="button">

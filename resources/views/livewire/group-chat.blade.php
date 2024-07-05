@@ -195,7 +195,6 @@
             chatContainer.classList.add('w-4/5');
             chatInput.classList.remove('w-3/5');
             chatInput.classList.add('w-4/5');
-            wireElement.setAttribute('wire:poll');
         }
     }
 
@@ -209,7 +208,6 @@
             wireElement.removeAttribute('wire:poll');
         } else {
             dropdown.classList.add('hidden');
-            wireElement.setAttribute('wire:poll');
         }
     }
 
