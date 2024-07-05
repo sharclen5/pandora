@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Community;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileCommunity extends Component
 {
@@ -13,7 +14,10 @@ class ProfileCommunity extends Component
     public $member;
 
     public function mount()
-    {;
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         $this->community = Community::where('members_id', auth()->user()->id)->get();
         $this->categoryList = Category::all();
     }

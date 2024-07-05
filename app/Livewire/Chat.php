@@ -7,6 +7,7 @@ use App\Models\Message;
 use Livewire\Component;
 use App\Models\Community;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class Chat extends Component
 {   
@@ -15,6 +16,13 @@ class Chat extends Component
     public $community;
     public $message = '';
 
+    public function mount()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+    }
+    
     public function render()
     {
         $users = User::where('id', '!=', auth()->id())

@@ -55,11 +55,10 @@ Route::view('profile', 'profile')
         return view('communityprofile');
     })->name('communityprofile');
     
-    Route::get('/event', function () {
-        return view('event', ['title' => 'Event']);
-    })->name('event');
-    
     Route::get('/profile', function () {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         return view('profile', ['title' => 'Profile']);
     })->name('profile');
 

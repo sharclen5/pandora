@@ -15,6 +15,12 @@ class CommunityList extends Component
     public $selectedCategory;
     public $search='';
 
+    public function mount()
+    {
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+    }
     public function updatingSearch()
     {
         $this->resetPage();

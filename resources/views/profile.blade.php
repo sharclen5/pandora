@@ -47,11 +47,7 @@
                     <div class="flex flex-col items-center space-y-5 sm:flex-row sm:space-y-0">
 
                         <img class="object-cover w-40 h-40 p-1 rounded-full ring-2 ring-indigo-300"
-                            src="
-                              @if (auth()->user()->img == 'default.jpg') https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZhY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60
-                              @else
-                                {{ asset('storage/' . auth()->user()->img) }} @endif
-                            "
+                            src=" {{ auth()->user()->img == 'default.jpg' ? asset('minisuibg.png') : asset('storage/' . auth()->user()->img) }}"
                             alt="Bordered avatar">
 
                         <div class="flex flex-col space-y-5 sm:ml-8">

@@ -17,6 +17,9 @@ class GroupChat extends Component
 
     public function mount($communityId)
     {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         $this->commun = Community::find($communityId);
         $this->user = auth()->user();
     }

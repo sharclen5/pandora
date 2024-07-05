@@ -13,6 +13,9 @@ class CommunityCategory extends Component
 
     public function mount($categoryId)
     {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
         $this->categoryId = $categoryId;
         // You can also perform any actions here, like fetching data related to the categoryId
     }
