@@ -19,7 +19,7 @@
                 Create Your Community
             </button>
 
-            <a href="#" wire:click.prevent="setCategory('')"
+            <a href="{{ route('community') }}" 
                 class="active mb-4 flex items-center p-2 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-100 group">
                 <svg class="w-6 h-6 text-gray-800" viewBox="0 0 32 32" version="1.1"
                     xmlns="http://www.w3.org/2000/svg">
@@ -28,30 +28,6 @@
                     </path>
                 </svg>
                 <span class="ml-3">All</span>
-            </a>
-
-            <a href="#"
-                class="mb-4 flex items-center p-2 text-base font-medium text-gray-900 rounded-lg hover:bg-gray-100 group">
-                <svg class="w-6 h-6 text-gray-800" viewBox="0 0 30 30" id="_16_-_Compas" data-name="16 - Compas"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path id="Path_190" data-name="Path 190"
-                        d="M16,1A15,15,0,1,0,31,16,15.007,15.007,0,0,0,16,1Zm0,2A13,13,0,1,1,3,16,13.006,13.006,0,0,1,16,3Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <path id="Path_191" data-name="Path 191" d="M15,2V4a1,1,0,0,0,2,0V2a1,1,0,0,0-2,0Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <path id="Path_192" data-name="Path 192" d="M17,30V28a1,1,0,0,0-2,0v2a1,1,0,0,0,2,0Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <path id="Path_193" data-name="Path 193" d="M30,15H28a1,1,0,0,0,0,2h2a1,1,0,0,0,0-2Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <path id="Path_194" data-name="Path 194" d="M4,15H2a1,1,0,0,0,0,2H4a1,1,0,0,0,0-2Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <path id="Path_195" data-name="Path 195"
-                        d="M23.633,9.686a1,1,0,0,0-1.32-1.32l-9.3,4.136a1,1,0,0,0-.508.507l-4.135,9.3a1,1,0,0,0,1.32,1.32l9.3-4.135a1,1,0,0,0,.508-.508l4.135-9.3ZM20.749,11.25l-2.923,6.577L11.25,20.75l2.923-6.577Z"
-                        transform="translate(-1 -1)" fill-rule="evenodd" />
-                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="1.243" cy="1.243" r="1.243"
-                        transform="translate(13.757 13.757)" />
-                </svg>
-                <span class="ml-3">For You</span>
             </a>
 
             @foreach ($categories as $ctgrs)
@@ -78,24 +54,25 @@
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                 <h1 class="text-4xl font-bold text-white mb-2">Discover Your Community on Pandora</h1>
                 <p class="text-lg font-normal text-white mb-4">There's always a place for you</p>
-
-                <form class="max-w mx-auto">
-                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input type="search" id="default-search"
+                <div class="max-w mx-auto">
+                    <form>
+                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="text" id="default-search" wire:model.live.debounce.500ms="search"
                             class="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                             placeholder="Go find it now !" required />
-                        <button type="submit"
-                            class="text-white absolute end-2.5 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1">Search</button>
-                    </div>
-                </form>
+                            <button type="submit"
+                                class="text-white absolute end-2.5 bottom-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1">Search</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
@@ -125,16 +102,6 @@
                 </div>
                 @include('livewire.community-profile', ['id' => $commun->id])
             @endforeach
-
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex justify-center items-center">
-                <a href="#">
-                    <svg class="w-24 h-24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
-                            fill="#1C274C" />
-                    </svg>
-                </a>
-            </div>
 
         </div>
 

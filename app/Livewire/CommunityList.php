@@ -13,22 +13,30 @@ class CommunityList extends Component
     use WithPagination;
 
     public $selectedCategory;
-    public $communities;
+    public $search='';
 
-    public function mount()
+    public function updatingSearch()
     {
-        $this->selectedCategory = null;
-    }   
+        $this->resetPage();
+    }
+
+    public function getCommunities()
+    {
+        return Community::where('name', 'like', '%'.$this->search.'%')->paginate(8);
+    }
 
     public function render()
     {
-        $communities = Community::paginate(8);
+        $communities = $this->getCommunities();
+        $commun = Community::all();
         $categories = Category::all();
-
+    
         return view('livewire.community-list', [
             'community' => $communities,
-            'categories' => $categories
+            'categories' => $categories,
+            'search' => $this->search,
+            'com' => $commun
         ]);
-    }
+    }       
 
 }
